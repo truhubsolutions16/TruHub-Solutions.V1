@@ -46,6 +46,7 @@ export function Portfolio({
                         src={it.image_url}
                         alt={it.name}
                         loading="lazy"
+                        decoding="async"
                         className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                     ) : (
