@@ -72,11 +72,12 @@ async function buildSystemPrompt(): Promise<{ prompt: string; enabled: boolean }
 }
 
 // Free OpenRouter models (rotate on 429). All have :free tier — no paid plan needed.
+// Order: highest-quality/most-reliable first.
 const OPENROUTER_FREE_MODELS = [
+  "openai/gpt-oss-20b:free",
+  "openai/gpt-oss-120b:free",
   "meta-llama/llama-3.3-70b-instruct:free",
-  "qwen/qwen-2.5-72b-instruct:free",
-  "google/gemini-2.0-flash-exp:free",
-  "mistralai/mistral-7b-instruct:free",
+  "nvidia/nemotron-nano-9b-v2:free",
 ];
 
 export const Route = createFileRoute("/api/chat")({
