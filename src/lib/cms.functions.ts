@@ -246,6 +246,7 @@ const ADMIN_TABLES = [
   "section_meta",
   "why_choose_us",
   "process_steps",
+  "team_members",
   "blog_posts",
   "site_settings",
 ] as const;
