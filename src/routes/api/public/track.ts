@@ -36,11 +36,12 @@ function rateOk(key: string) {
 }
 
 function admin() {
-  return createClient<Database>(
-    process.env.SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!,
-    { auth: { persistSession: false, autoRefreshToken: false } }
-  );
+  const url = process.env.SUPABASE_URL;
+  const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!url || !key) return null;
+  return createClient<Database>(url, key, {
+    auth: { persistSession: false, autoRefreshToken: false },
+  });
 }
 
 export const Route = createFileRoute("/api/public/track")({
@@ -60,6 +61,8 @@ export const Route = createFileRoute("/api/public/track")({
           const country = request.headers.get("cf-ipcountry") || null;
           const ipHash = createHash("sha256").update(ip + (process.env.SUPABASE_URL ?? "")).digest("hex").slice(0, 32);
           const sb = admin();
+          if (!sb) return new Response("ok");
+
 
           // insert event row
           await sb.from("analytics_events").insert({
