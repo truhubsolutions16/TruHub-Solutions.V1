@@ -33,15 +33,32 @@ export function ChatWidget() {
     try {
       const r = await fetch("/api/chat", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify({ messages: next }),
       });
-      if (!r.ok) throw new Error(await r.text());
-      const j = (await r.json()) as { content: string };
-      setMessages((m) => [...m, { role: "assistant", content: j.content }]);
+      const raw = await r.text();
+      let content = "";
+      try {
+        const j = JSON.parse(raw) as { content?: string; error?: string };
+        content =
+          j.content ??
+          (j.error
+            ? `Sorry, the assistant isn't available right now (${j.error}).`
+            : "Sorry, I couldn't generate a reply.");
+      } catch {
+        content = raw || "Sorry, I couldn't reach the server. Please email truhub.solutions@gmail.com.";
+      }
+      setMessages((m) => [...m, { role: "assistant", content }]);
     } catch (e) {
-      setMessages((m) => [...m, { role: "assistant", content: "Sorry, I couldn't reach the server. Please email truhub.solutions@gmail.com." }]);
       console.error(e);
+      setMessages((m) => [
+        ...m,
+        {
+          role: "assistant",
+          content:
+            "Sorry, I couldn't reach the server. Please email truhub.solutions@gmail.com.",
+        },
+      ]);
     } finally {
       setBusy(false);
     }
