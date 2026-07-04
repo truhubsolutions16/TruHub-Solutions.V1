@@ -61,6 +61,8 @@ export const Route = createFileRoute("/api/public/track")({
           const country = request.headers.get("cf-ipcountry") || null;
           const ipHash = createHash("sha256").update(ip + (process.env.SUPABASE_URL ?? "")).digest("hex").slice(0, 32);
           const sb = admin();
+          if (!sb) return new Response("ok");
+
 
           // insert event row
           await sb.from("analytics_events").insert({
