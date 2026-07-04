@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, type MouseEvent } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { Aurora, Grid, Particles } from "./aurora";
-const truhubLogo = { url: "/truhub-logo.png" };
+const truhubLogo = { url: "/truhub-logo.webp" };
 
 
 export function Hero({
