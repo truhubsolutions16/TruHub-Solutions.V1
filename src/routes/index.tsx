@@ -9,6 +9,7 @@ import { Navbar } from "@/components/site/navbar";
 import { Hero } from "@/components/site/hero";
 import { About } from "@/components/site/about";
 import { Founder } from "@/components/site/founder";
+import { Team } from "@/components/site/team";
 import { Services, WhyChooseUs } from "@/components/site/services";
 import { Pricing } from "@/components/site/pricing";
 import { Portfolio } from "@/components/site/portfolio";
