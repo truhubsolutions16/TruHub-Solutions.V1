@@ -343,6 +343,23 @@ function Dashboard({ email, onSignOut }: { email: string; onSignOut: () => void 
                 onChanged={() => { qc.invalidateQueries(); content.refetch(); }}
               />
             )}
+            {tab === "team" && (
+              <ListEditor table="team_members" title="Team Members" rows={(content.data as unknown as { team?: Array<Record<string, unknown>> }).team ?? []}
+                fields={[
+                  { key: "name", label: "Name", type: "text", required: true },
+                  { key: "title", label: "Designation / Title", type: "text", required: true },
+                  { key: "tagline", label: "Tagline (short one-liner)", type: "text" },
+                  { key: "description", label: "Description / Bio", type: "textarea" },
+                  { key: "photo_url", label: "Photo", type: "image" },
+                  { key: "email", label: "Email", type: "text" },
+                  { key: "phone", label: "Phone", type: "text" },
+                  { key: "linkedin_url", label: "LinkedIn URL", type: "text" },
+                  { key: "is_active", label: "Active (show on site)", type: "bool" },
+                  { key: "sort_order", label: "Order", type: "number" },
+                ]}
+                onChanged={() => { qc.invalidateQueries(); content.refetch(); }}
+              />
+            )}
             {tab === "contact" && (
               <SingleEditor table="contact_info" title="Contact Info" row={content.data.contact}
                 fields={[
