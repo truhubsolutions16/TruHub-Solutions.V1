@@ -168,6 +168,7 @@ const TABS: { id: Tab; label: string }[] = [
   { id: "addons", label: "Add-ons" },
   { id: "portfolio", label: "Portfolio" },
   { id: "founder", label: "Founder" },
+  { id: "team", label: "Team" },
   { id: "process", label: "Process Steps" },
   { id: "testimonials", label: "Testimonials" },
   { id: "faqs", label: "FAQs" },
