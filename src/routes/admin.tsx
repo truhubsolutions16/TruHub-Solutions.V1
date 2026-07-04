@@ -146,7 +146,7 @@ type Tab =
   | "dashboard" | "analytics" | "leads" | "activity" | "security"
   | "users" | "projects" | "messages" | "backups"
   | "sections" | "portfolio" | "services" | "why" | "pricing" | "addons" | "testimonials" | "faqs"
-  | "hero" | "about" | "founder" | "process" | "contact" | "submissions" | "media"
+  | "hero" | "about" | "founder" | "team" | "process" | "contact" | "submissions" | "media"
   | "blog" | "settings" | "seo" | "redirects" | "media-library";
 
 const TABS: { id: Tab; label: string }[] = [
@@ -168,6 +168,7 @@ const TABS: { id: Tab; label: string }[] = [
   { id: "addons", label: "Add-ons" },
   { id: "portfolio", label: "Portfolio" },
   { id: "founder", label: "Founder" },
+  { id: "team", label: "Team" },
   { id: "process", label: "Process Steps" },
   { id: "testimonials", label: "Testimonials" },
   { id: "faqs", label: "FAQs" },
@@ -338,6 +339,23 @@ function Dashboard({ email, onSignOut }: { email: string; onSignOut: () => void 
                   { key: "vision", label: "Vision", type: "textarea", required: true },
                   { key: "skills", label: "Skills (one per line)", type: "list" },
                   { key: "photo_url", label: "Photo URL", type: "image" },
+                ]}
+                onChanged={() => { qc.invalidateQueries(); content.refetch(); }}
+              />
+            )}
+            {tab === "team" && (
+              <ListEditor table="team_members" title="Team Members" rows={(content.data as unknown as { team?: Array<Record<string, unknown>> }).team ?? []}
+                fields={[
+                  { key: "name", label: "Name", type: "text", required: true },
+                  { key: "title", label: "Designation / Title", type: "text", required: true },
+                  { key: "tagline", label: "Tagline (short one-liner)", type: "text" },
+                  { key: "description", label: "Description / Bio", type: "textarea" },
+                  { key: "photo_url", label: "Photo", type: "image" },
+                  { key: "email", label: "Email", type: "text" },
+                  { key: "phone", label: "Phone", type: "text" },
+                  { key: "linkedin_url", label: "LinkedIn URL", type: "text" },
+                  { key: "is_active", label: "Active (show on site)", type: "bool" },
+                  { key: "sort_order", label: "Order", type: "number" },
                 ]}
                 onChanged={() => { qc.invalidateQueries(); content.refetch(); }}
               />

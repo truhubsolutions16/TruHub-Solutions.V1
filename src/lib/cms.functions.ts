@@ -18,7 +18,7 @@ function publicClient() {
 // ---------- Public reads (used by public routes) ----------
 export const getSiteContent = createServerFn({ method: "GET" }).handler(async () => {
   const sb = publicClient();
-  const [hero, about, founder, services, plans, addons, portfolio, testimonials, faqs, contact, sectionMeta, whyChooseUs, processSteps] =
+  const [hero, about, founder, services, plans, addons, portfolio, testimonials, faqs, contact, sectionMeta, whyChooseUs, processSteps, team] =
     await Promise.all([
       sb.from("hero_content").select("*").limit(1).maybeSingle(),
       sb.from("about_content").select("*").limit(1).maybeSingle(),
@@ -33,6 +33,8 @@ export const getSiteContent = createServerFn({ method: "GET" }).handler(async ()
       sb.from("section_meta").select("*"),
       sb.from("why_choose_us").select("*").order("sort_order"),
       sb.from("process_steps").select("*").order("sort_order"),
+      (sb.from as unknown as (t: string) => ReturnType<typeof sb.from>)("team_members")
+        .select("*").eq("is_active", true).order("sort_order"),
     ]);
   const meta: Record<string, { eyebrow: string | null; heading: string | null; subheading: string | null; extra: string | null }> = {};
   for (const r of sectionMeta.data ?? []) {
@@ -52,6 +54,11 @@ export const getSiteContent = createServerFn({ method: "GET" }).handler(async ()
     meta,
     whyChooseUs: whyChooseUs.data ?? [],
     processSteps: processSteps.data ?? [],
+    team: (team.data ?? []) as Array<{
+      id: string; name: string; title: string; tagline: string | null; description: string | null;
+      photo_url: string | null; email: string | null; phone: string | null; linkedin_url: string | null;
+      sort_order: number; is_active: boolean;
+    }>,
   };
 });
 
@@ -239,6 +246,7 @@ const ADMIN_TABLES = [
   "section_meta",
   "why_choose_us",
   "process_steps",
+  "team_members",
   "blog_posts",
   "site_settings",
 ] as const;

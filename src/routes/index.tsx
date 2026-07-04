@@ -9,6 +9,7 @@ import { Navbar } from "@/components/site/navbar";
 import { Hero } from "@/components/site/hero";
 import { About } from "@/components/site/about";
 import { Founder } from "@/components/site/founder";
+import { Team } from "@/components/site/team";
 import { Services, WhyChooseUs } from "@/components/site/services";
 import { Pricing } from "@/components/site/pricing";
 import { Portfolio } from "@/components/site/portfolio";
@@ -123,6 +124,7 @@ function Index() {
           photoUrl={founder.photo_url}
           meta={meta.founder}
         />
+        <Team members={data?.team ?? []} meta={meta.team} />
         <Process steps={processItems} meta={meta.process} />
         <FAQ items={data?.faqs ?? []} meta={meta.faq} />
 
