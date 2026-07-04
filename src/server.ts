@@ -1,7 +1,13 @@
 import "./lib/error-capture";
+import { validateServerEnv } from "./lib/env-check.server";
 
 import { consumeLastCapturedError } from "./lib/error-capture";
 import { renderErrorPage } from "./lib/error-page";
+
+// Fail loudly at boot if required server env vars are missing, instead of
+// surfacing as a generic 500 on first request.
+validateServerEnv();
+
 
 type ServerEntry = {
   fetch: (request: Request, env: unknown, ctx: unknown) => Promise<Response> | Response;

@@ -1,0 +1,7 @@
+# TruHub Solutions
+
+> TruHub Solutions is a luxury tech agency crafting premium websites, branding, AI automation and digital solutions for ambitious brands. Tagline: Build. Grow. Succeed.
+
+## Pages
+
+- [Home](/): Overview of TruHub Solutions — services, pricing, portfolio, process, founder, FAQ and contact details.
