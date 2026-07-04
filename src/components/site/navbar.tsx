@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-const logoAsset = { url: "/truhub-logo.png" };
+const logoAsset = { url: "/truhub-logo.webp" };
 
 const LINKS = [
   { href: "/#home", label: "Home" },
@@ -38,7 +38,7 @@ export function Navbar() {
           }`}
         >
           <a href="#home" className="flex items-center gap-2.5">
-            <img src={logoAsset.url} alt="TruHub" className="h-9 w-9 rounded-lg object-contain" />
+            <img src={logoAsset.url} alt="TruHub" width={36} height={36} decoding="async" className="h-9 w-9 rounded-lg object-contain" />
             <span className="hidden font-display text-lg font-semibold tracking-tight sm:inline">
               TruHub<span className="text-[#38BDF8]"> Solutions</span>
             </span>

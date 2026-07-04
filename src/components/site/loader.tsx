@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-const logoAsset = { url: "/truhub-logo.png" };
+const logoAsset = { url: "/truhub-logo.webp" };
 
 export function SiteLoader() {
   const [show, setShow] = useState(true);
@@ -27,6 +27,10 @@ export function SiteLoader() {
             <img
               src={logoAsset.url}
               alt="TruHub Solutions"
+              width={96}
+              height={96}
+              fetchPriority="high"
+              decoding="async"
               className="h-24 w-24 anim-glow-pulse rounded-2xl object-contain"
             />
             <div className="h-[2px] w-40 overflow-hidden rounded-full bg-white/10">
