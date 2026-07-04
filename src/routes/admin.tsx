@@ -146,7 +146,7 @@ type Tab =
   | "dashboard" | "analytics" | "leads" | "activity" | "security"
   | "users" | "projects" | "messages" | "backups"
   | "sections" | "portfolio" | "services" | "why" | "pricing" | "addons" | "testimonials" | "faqs"
-  | "hero" | "about" | "founder" | "process" | "contact" | "submissions" | "media"
+  | "hero" | "about" | "founder" | "team" | "process" | "contact" | "submissions" | "media"
   | "blog" | "settings" | "seo" | "redirects" | "media-library";
 
 const TABS: { id: Tab; label: string }[] = [
