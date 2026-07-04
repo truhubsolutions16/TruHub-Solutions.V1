@@ -36,8 +36,11 @@ export function Founder({
                 <img
                   src={src}
                   alt={`${name}, ${title}`}
+                  width={640}
+                  height={800}
                   className="h-full w-full object-cover"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#030712] to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 rounded-xl glass p-3">
