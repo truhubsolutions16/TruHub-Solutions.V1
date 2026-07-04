@@ -2,7 +2,7 @@ import { Globe, Mail as MailIcon, MessageCircle } from "lucide-react";
 const Instagram = Globe;
 const Linkedin = MailIcon;
 const Twitter = MessageCircle;
-const logoAsset = { url: "/truhub-logo.png" };
+const logoAsset = { url: "/truhub-logo.webp" };
 
 export function Footer({ email, phone }: { email: string; phone: string }) {
   return (
