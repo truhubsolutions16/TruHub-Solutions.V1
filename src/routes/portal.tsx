@@ -8,6 +8,7 @@ import { supabase } from "@/integrations/supabase/client";
 import {
   listMyProjects, listMyInvoices, listProjectFiles,
   listProjectMessages, sendProjectMessage,
+  checkMemberAccess,
 } from "@/lib/portal/portal.functions";
 
 export const Route = createFileRoute("/portal")({
@@ -26,16 +27,35 @@ type Session = { user: { id: string; email?: string | null } } | null;
 function PortalPage() {
   const [session, setSession] = useState<Session>(null);
   const [loading, setLoading] = useState(true);
+  const [allowed, setAllowed] = useState<null | boolean>(null);
+  const check = useServerFn(checkMemberAccess);
+
+  async function verify() {
+    try {
+      const r = await check();
+      setAllowed(r.isMember);
+    } catch { setAllowed(false); }
+  }
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session ? { user: data.session.user } : null);
+      if (data.session) { setSession({ user: data.session.user }); verify(); }
+      else { setAllowed(null); }
       setLoading(false);
     });
-    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) =>
-      setSession(s ? { user: s.user } : null));
+    const { data: sub } = supabase.auth.onAuthStateChange((_e, s) => {
+      setSession(s ? { user: s.user } : null);
+      if (s) verify(); else setAllowed(null);
+    });
     return () => sub.subscription.unsubscribe();
+    // eslint-disable-next-line
   }, []);
+
+  async function signOut() {
+    await supabase.auth.signOut();
+    setSession(null);
+    setAllowed(null);
+  }
 
   if (loading) {
     return <div className="flex min-h-screen items-center justify-center bg-[#030712]"><Loader2 className="animate-spin text-[#38BDF8]" /></div>;
@@ -50,12 +70,23 @@ function PortalPage() {
             <p className="mt-1 text-sm text-white/60">Your projects with TruHub Solutions</p>
           </div>
           {session && (
-            <button onClick={() => supabase.auth.signOut()} className="btn-ghost btn-ghost-hover !py-2 !text-xs">
+            <button onClick={signOut} className="btn-ghost btn-ghost-hover !py-2 !text-xs">
               <LogOut size={14} /> Sign out
             </button>
           )}
         </header>
-        {!session ? <PortalAuth /> : <PortalDashboard email={session.user.email ?? ""} />}
+        {!session && <PortalAuth />}
+        {session && allowed === null && <Loader2 className="mx-auto animate-spin text-[#38BDF8]" />}
+        {session && allowed === false && (
+          <div className="mx-auto max-w-md rounded-3xl border border-red-500/30 bg-[#0B1220] p-8 text-center">
+            <h2 className="font-display text-2xl font-semibold">Not a client account</h2>
+            <p className="mt-2 text-sm text-white/60">
+              This account ({session.user.email}) isn't registered as a client. If you're staff, use the admin or employee portal instead. Otherwise ask us to set up your client account.
+            </p>
+            <button onClick={signOut} className="btn-ghost btn-ghost-hover mt-6 w-full !py-2 !text-xs"><LogOut size={14} /> Sign out</button>
+          </div>
+        )}
+        {session && allowed === true && <PortalDashboard email={session.user.email ?? ""} />}
       </div>
     </div>
   );

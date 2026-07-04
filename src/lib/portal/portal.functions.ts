@@ -54,8 +54,34 @@ export const checkEmployeeAccess = createServerFn({ method: "GET" })
     return {
       userId: context.userId,
       email: context.claims?.email ?? null,
-      isEmployee: roles.includes("employee") || roles.includes("admin"),
+      // Strict: employee portal requires the explicit "employee" role.
+      // Admins do NOT auto-inherit employee access — they must be granted it.
+      isEmployee: roles.includes("employee"),
       isAdmin: roles.includes("admin"),
+      roles,
+    };
+  });
+
+// Strict gate for the client portal — only users with the "member" role
+// (i.e. actual clients) can enter. Admins/employees signed into the same
+// browser must NOT auto-inherit client access.
+// New signups that have no roles at all are auto-granted "member" so the
+// public sign-up flow keeps working; anyone who is already admin/employee
+// is blocked and must sign out.
+export const checkMemberAccess = createServerFn({ method: "GET" })
+  .middleware([requireSupabaseAuth])
+  .handler(async ({ context }) => {
+    let roles = await getRoles(context);
+    if (roles.length === 0) {
+      const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
+      await supabaseAdmin.from("user_roles").insert({ user_id: context.userId, role: "member" });
+      roles = ["member"];
+    }
+    return {
+      userId: context.userId,
+      email: context.claims?.email ?? null,
+      isMember: roles.includes("member"),
+      roles,
     };
   });
 
