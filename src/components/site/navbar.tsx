@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-const logoAsset = { url: "/truhub-logo.png" };
+const logoAsset = { url: "/truhub-logo.webp" };
 
 const LINKS = [
   { href: "/#home", label: "Home" },
