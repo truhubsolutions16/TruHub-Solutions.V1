@@ -76,14 +76,14 @@ export const Route = createFileRoute("/api/chat")({
     handlers: {
       POST: async ({ request }) => {
         try {
-          const key = process.env.LOVABLE_API_KEY;
+          const key = process.env.GEMINI_API_KEY;
           if (!key) {
-            console.error("[api/chat] Missing LOVABLE_API_KEY env var");
+            console.error("[api/chat] Missing GEMINI_API_KEY env var");
             return Response.json(
               {
                 error: "chat_not_configured",
                 content:
-                  "The chatbot isn't configured yet. Please set LOVABLE_API_KEY in the deployment environment.",
+                  "The chatbot isn't configured yet. Please set GEMINI_API_KEY in the deployment environment.",
               },
               { status: 200 },
             );
@@ -99,30 +99,37 @@ export const Route = createFileRoute("/api/chat")({
                 "The chatbot is currently off. Please reach us at truhub.solutions@gmail.com or on WhatsApp.",
             });
           }
-          const resp = await fetch("https://ai.gateway.lovable.dev/v1/chat/completions", {
-            method: "POST",
-            headers: { "Content-Type": "application/json", Authorization: `Bearer ${key}` },
-            body: JSON.stringify({
-              model: "google/gemini-2.5-flash",
-              messages: [{ role: "system", content: prompt }, ...body.messages.slice(-20)],
-            }),
-          });
+          const history = body.messages.slice(-20);
+          const contents = history.map((m) => ({
+            role: m.role === "assistant" ? "model" : "user",
+            parts: [{ text: m.content }],
+          }));
+          const resp = await fetch(
+            `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${key}`,
+            {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                systemInstruction: { parts: [{ text: prompt }] },
+                contents,
+              }),
+            },
+          );
           if (!resp.ok) {
             const text = await resp.text();
-            console.error("[api/chat] Gateway error", resp.status, text);
+            console.error("[api/chat] Gemini error", resp.status, text);
             const msg =
               resp.status === 429
                 ? "We're getting a lot of requests right now. Please try again in a moment."
-                : resp.status === 402
-                  ? "AI credits are exhausted. Please contact us at truhub.solutions@gmail.com."
-                  : "Sorry, the assistant is temporarily unavailable. Please email truhub.solutions@gmail.com.";
-            return Response.json({ content: msg, error: "gateway_error", status: resp.status });
+                : "Sorry, the assistant is temporarily unavailable. Please email truhub.solutions@gmail.com.";
+            return Response.json({ content: msg, error: "gemini_error", status: resp.status });
           }
           const json = (await resp.json()) as {
-            choices?: Array<{ message?: { content?: string } }>;
+            candidates?: Array<{ content?: { parts?: Array<{ text?: string }> } }>;
           };
           const content =
-            json.choices?.[0]?.message?.content ?? "Sorry, I couldn't generate a reply.";
+            json.candidates?.[0]?.content?.parts?.map((p) => p.text ?? "").join("") ||
+            "Sorry, I couldn't generate a reply.";
           return Response.json({ content });
         } catch (err) {
           console.error("[api/chat] unhandled error", err);
@@ -135,6 +142,7 @@ export const Route = createFileRoute("/api/chat")({
             { status: 200 },
           );
         }
+
       },
     },
   },
