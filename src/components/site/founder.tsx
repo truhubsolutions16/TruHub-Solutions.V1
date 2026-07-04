@@ -2,7 +2,7 @@
 import { Check } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
-const founderPhoto = { url: "/founder-jayanth.jpg" };
+const founderPhoto = { url: "/founder-jayanth.webp" };
 
 export function Founder({
   name,
