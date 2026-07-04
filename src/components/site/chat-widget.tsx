@@ -67,15 +67,28 @@ export function ChatWidget() {
   return (
     <>
       {!open && (
-        <button
-          onClick={() => setOpen(true)}
-          aria-label="Open chat"
-          className="group fixed bottom-6 right-24 z-40 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_10px_40px_-10px_rgba(30,167,255,0.7)] transition-transform hover:scale-110"
-          style={{ background: "linear-gradient(135deg,#1EA7FF 0%,#2563EB 100%)" }}
-        >
-          <span className="pointer-events-none absolute inset-0 rounded-full opacity-70 anim-glow-pulse" />
-          <MessageSquare className="relative" size={24} />
-        </button>
+        <>
+          <div
+            className="fixed bottom-[5.5rem] right-20 z-40 hidden sm:block pointer-events-none anim-chat-tooltip"
+            aria-hidden
+          >
+            <div className="relative rounded-xl bg-[#0B1220]/95 px-3 py-2 text-xs font-medium text-white shadow-[0_10px_30px_-10px_rgba(30,167,255,0.6)] border border-[#38BDF8]/30 backdrop-blur-xl whitespace-nowrap">
+              👋 Chat with TruBot
+              <span className="absolute -bottom-1 right-6 h-2 w-2 rotate-45 bg-[#0B1220]/95 border-r border-b border-[#38BDF8]/30" />
+            </div>
+          </div>
+          <button
+            onClick={() => setOpen(true)}
+            aria-label="Open chat"
+            className="group fixed bottom-6 right-24 z-40 flex h-14 w-14 items-center justify-center rounded-full text-white shadow-[0_10px_40px_-10px_rgba(30,167,255,0.7)] transition-transform hover:scale-110 anim-chat-bounce"
+            style={{ background: "linear-gradient(135deg,#1EA7FF 0%,#2563EB 100%)" }}
+          >
+            <span className="pointer-events-none absolute inset-0 rounded-full opacity-70 anim-glow-pulse" />
+            <span className="pointer-events-none absolute inset-0 rounded-full anim-chat-ring" style={{ boxShadow: "0 0 0 0 rgba(30,167,255,0.7)" }} />
+            <span className="pointer-events-none absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] font-bold text-white shadow-lg anim-chat-badge">1</span>
+            <MessageSquare className="relative" size={24} />
+          </button>
+        </>
       )}
       {open && (
         <div className="fixed bottom-6 right-6 z-50 flex h-[560px] w-[min(92vw,380px)] flex-col overflow-hidden rounded-2xl border border-white/10 bg-[#0B1220]/95 shadow-2xl backdrop-blur-xl">
