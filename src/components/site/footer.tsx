@@ -11,7 +11,7 @@ export function Footer({ email, phone }: { email: string; phone: string }) {
         <div className="grid gap-10 md:grid-cols-4">
           <div className="md:col-span-2">
             <div className="flex items-center gap-2.5">
-              <img src={logoAsset.url} alt="TruHub" className="h-10 w-10 rounded-lg object-contain" />
+              <img src={logoAsset.url} alt="TruHub" width={40} height={40} loading="lazy" decoding="async" className="h-10 w-10 rounded-lg object-contain" />
               <span className="font-display text-lg font-semibold">
                 TruHub<span className="text-[#38BDF8]"> Solutions</span>
               </span>
