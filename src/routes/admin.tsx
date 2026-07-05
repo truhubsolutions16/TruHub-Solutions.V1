@@ -27,6 +27,16 @@ import { MessagesPanel } from "@/components/admin/messages-panel";
 import { CommandPalette } from "@/components/admin/command-palette";
 import { recordLoginAttempt } from "@/lib/security/security.functions";
 
+async function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve((r.result as string).split(",")[1] ?? "");
+    r.onerror = () => reject(r.error ?? new Error("Read failed"));
+    r.readAsDataURL(file);
+  });
+}
+
+
 
 
 export const Route = createFileRoute("/admin")({
@@ -430,8 +440,7 @@ function ImageField({ value, onChange }: { value: string | null | undefined; onC
     const file = e.target.files?.[0]; if (!file) return;
     setBusy(true);
     try {
-      const buf = await file.arrayBuffer();
-      const base64 = btoa(String.fromCharCode(...new Uint8Array(buf)));
+      const base64 = await fileToBase64(file);
       const { url } = await upload({ data: { filename: file.name, contentType: file.type, base64 } });
       onChange(url);
       toast.success("Uploaded");
@@ -587,8 +596,7 @@ function MediaPanel() {
     const file = e.target.files?.[0]; if (!file) return;
     setBusy(true);
     try {
-      const buf = await file.arrayBuffer();
-      const base64 = btoa(String.fromCharCode(...new Uint8Array(buf)));
+      const base64 = await fileToBase64(file);
       await upload({ data: { filename: file.name, contentType: file.type, base64 } });
       toast.success("Uploaded");
       list.refetch();
