@@ -54,6 +54,14 @@ export function Footer({ email, phone }: { email: string; phone: string }) {
               <li><a href={`mailto:${email}`} className="hover:text-[#38BDF8]">{email}</a></li>
               <li><a href={`tel:${phone.replace(/\s/g, "")}`} className="hover:text-[#38BDF8]">{phone}</a></li>
             </ul>
+            <div className="mt-6 mb-3 text-sm font-semibold text-white/80">Legal</div>
+            <ul className="space-y-2 text-sm text-white/60">
+              <li><a href="/privacy" className="hover:text-[#38BDF8]">Privacy Policy</a></li>
+              <li><a href="/terms" className="hover:text-[#38BDF8]">Terms &amp; Conditions</a></li>
+              <li><a href="/cookies" className="hover:text-[#38BDF8]">Cookie Policy</a></li>
+              <li><a href="/refund" className="hover:text-[#38BDF8]">Refund Policy</a></li>
+              <li><a href="/service-agreement" className="hover:text-[#38BDF8]">Service Agreement</a></li>
+            </ul>
           </div>
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-3 border-t border-white/5 pt-6 text-xs text-white/40 sm:flex-row">
