@@ -90,19 +90,6 @@ export function Hero({
               </a>
             </motion.div>
 
-            {/* Stat strip */}
-            <motion.div
-              initial={{ opacity: 0, y: 16 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.7, duration: 0.7 }}
-              className="mt-6 flex items-center gap-8 border-t border-white/10 pt-6 sm:gap-12"
-            >
-              <Stat value={80} suffix="+" label="Clients" />
-              <div className="h-8 w-px bg-white/10" />
-              <Stat value={120} suffix="+" label="Projects" />
-              <div className="h-8 w-px bg-white/10" />
-              <Stat value={99} suffix="%" label="Satisfaction" />
-            </motion.div>
           </motion.div>
 
           {/* RIGHT: Bento Studio Grid */}
