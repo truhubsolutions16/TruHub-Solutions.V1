@@ -100,7 +100,7 @@ export function Hero({
             className="relative grid h-[520px] w-full grid-cols-6 grid-rows-6 gap-3 sm:gap-4 lg:h-[600px]"
           >
             {/* Card 1: Portfolio Highlight */}
-            <BentoCard className="col-span-4 row-span-3 overflow-hidden p-0" delay={0.25}>
+            <BentoCard className="col-span-6 row-span-3 overflow-hidden p-0" delay={0.25}>
               <div className="relative h-full w-full">
                 <div
                   className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
@@ -130,19 +130,6 @@ export function Hero({
                   <div className="mt-0.5 text-sm font-semibold text-white">
                     Quantum Analytics SaaS
                   </div>
-                </div>
-              </div>
-            </BentoCard>
-
-            {/* Card 2: Live Stats */}
-            <BentoCard className="col-span-2 row-span-2 flex flex-col justify-between p-4" delay={0.35}>
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-[#1EA7FF]/20">
-                <span className="h-2.5 w-2.5 animate-pulse rounded-full bg-[#1EA7FF]" />
-              </div>
-              <div>
-                <div className="text-xl font-bold text-white sm:text-2xl">24.8k</div>
-                <div className="text-[9px] uppercase tracking-wider text-white/50">
-                  API Requests / Day
                 </div>
               </div>
             </BentoCard>
