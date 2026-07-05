@@ -1,5 +1,4 @@
 "use client";
-import { Mail, Phone, Linkedin } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
 
@@ -10,9 +9,6 @@ export type TeamMember = {
   tagline: string | null;
   description: string | null;
   photo_url: string | null;
-  email: string | null;
-  phone: string | null;
-  linkedin_url: string | null;
 };
 
 export function Team({ members, meta }: { members: TeamMember[]; meta?: SectionMeta }) {
@@ -47,25 +43,6 @@ export function Team({ members, meta }: { members: TeamMember[]; meta?: SectionM
                   {m.tagline && <div className="mt-1 text-xs italic text-white/50">"{m.tagline}"</div>}
                   {m.description && (
                     <p className="mt-3 text-sm leading-relaxed text-white/70">{m.description}</p>
-                  )}
-                  {(m.email || m.phone || m.linkedin_url) && (
-                    <div className="mt-4 flex items-center gap-2">
-                      {m.email && (
-                        <a href={`mailto:${m.email}`} aria-label={`Email ${m.name}`} className="rounded-lg border border-white/10 p-2 text-white/60 transition hover:border-[#38BDF8]/40 hover:text-[#38BDF8]">
-                          <Mail size={14} />
-                        </a>
-                      )}
-                      {m.phone && (
-                        <a href={`tel:${m.phone}`} aria-label={`Call ${m.name}`} className="rounded-lg border border-white/10 p-2 text-white/60 transition hover:border-[#38BDF8]/40 hover:text-[#38BDF8]">
-                          <Phone size={14} />
-                        </a>
-                      )}
-                      {m.linkedin_url && (
-                        <a href={m.linkedin_url} target="_blank" rel="noreferrer" aria-label={`${m.name} on LinkedIn`} className="rounded-lg border border-white/10 p-2 text-white/60 transition hover:border-[#38BDF8]/40 hover:text-[#38BDF8]">
-                          <Linkedin size={14} />
-                        </a>
-                      )}
-                    </div>
                   )}
                 </div>
               </div>

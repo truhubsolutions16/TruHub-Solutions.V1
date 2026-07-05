@@ -1293,7 +1293,39 @@ export type Database = {
       }
     }
     Views: {
-      [_ in never]: never
+      team_members_public: {
+        Row: {
+          description: string | null
+          id: string | null
+          is_active: boolean | null
+          name: string | null
+          photo_url: string | null
+          sort_order: number | null
+          tagline: string | null
+          title: string | null
+        }
+        Insert: {
+          description?: string | null
+          id?: string | null
+          is_active?: boolean | null
+          name?: string | null
+          photo_url?: string | null
+          sort_order?: number | null
+          tagline?: string | null
+          title?: string | null
+        }
+        Update: {
+          description?: string | null
+          id?: string | null
+          is_active?: boolean | null
+          name?: string | null
+          photo_url?: string | null
+          sort_order?: number | null
+          tagline?: string | null
+          title?: string | null
+        }
+        Relationships: []
+      }
     }
     Functions: {
       [_ in never]: never
