@@ -27,6 +27,16 @@ import { MessagesPanel } from "@/components/admin/messages-panel";
 import { CommandPalette } from "@/components/admin/command-palette";
 import { recordLoginAttempt } from "@/lib/security/security.functions";
 
+async function fileToBase64(file: File): Promise<string> {
+  return new Promise((resolve, reject) => {
+    const r = new FileReader();
+    r.onload = () => resolve((r.result as string).split(",")[1] ?? "");
+    r.onerror = () => reject(r.error ?? new Error("Read failed"));
+    r.readAsDataURL(file);
+  });
+}
+
+
 
 
 export const Route = createFileRoute("/admin")({
