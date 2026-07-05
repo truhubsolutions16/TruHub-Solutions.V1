@@ -274,3 +274,30 @@
 @utility anim-chat-ring { animation: chat-ring 2.4s ease-out infinite; }
 @utility anim-chat-badge { animation: chat-badge 1.6s ease-in-out infinite; }
 @utility anim-chat-tooltip { animation: chat-tooltip 6s ease-in-out infinite; animation-delay: 2s; }
+
+/* ---------- Accessibility ---------- */
+/* Visible keyboard focus for all interactive elements. */
+a:focus-visible,
+button:focus-visible,
+[role="button"]:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
+summary:focus-visible {
+  outline: 2px solid #38BDF8;
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Respect users who prefer less motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
