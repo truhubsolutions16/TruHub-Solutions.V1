@@ -125,6 +125,7 @@ function Index() {
           photoUrl={founder.photo_url}
           meta={meta.founder}
         />
+        <CEO />
         <Team members={data?.team ?? []} meta={meta.team} />
         <Process steps={processItems} meta={meta.process} />
         <FAQ items={data?.faqs ?? []} meta={meta.faq} />
