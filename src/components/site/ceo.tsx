@@ -6,10 +6,10 @@ import { SectionHeader, type SectionMeta } from "./section-header";
 const DEFAULT_PHOTO = "/ceo-truhub.webp";
 
 export function CEO({
-  name = "Sai Kumar",
+  name = "Bharani Kumar G.",
   title = "Chief Executive Officer",
-  vision = "We're building TruHub Solutions into the most trusted growth partner for ambitious brands — pairing world-class craft with technology that quietly does the heavy lifting.",
-  skills = ["Business Strategy", "Client Success", "Operations", "Product Vision"],
+  vision = "Great brands aren't built by chance — they're engineered. At TruHub, we turn every client's ambition into a digital experience that performs, scales and lasts.",
+  skills = ["Client Success", "Operations", "Growth Strategy"],
   photoUrl,
   meta,
 }: {
