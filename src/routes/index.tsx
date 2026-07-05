@@ -109,6 +109,7 @@ function Index() {
           ctaPrimary={hero.cta_primary_label}
           ctaSecondary={hero.cta_secondary_label}
         />
+        <SocialProof />
         <About
           heading={about.heading}
           body={about.body}
@@ -117,6 +118,11 @@ function Index() {
         <Services items={data?.services ?? []} meta={meta.services} />
 
         <WhyChooseUs items={whyItems} meta={meta.why} />
+        <CtaBanner
+          eyebrow="Book a strategy call"
+          heading="Ready to launch something remarkable?"
+          subheading="20 minutes with our team is all it takes to map out your build, timeline, and budget."
+        />
         <Pricing plans={data?.plans ?? []} addons={data?.addons ?? []} meta={meta.pricing} addonsMeta={meta.addons} />
         <Portfolio items={data?.portfolio ?? []} meta={meta.portfolio} />
         <Founder
@@ -131,6 +137,14 @@ function Index() {
         <Team members={data?.team ?? []} meta={meta.team} />
         <Process steps={processItems} meta={meta.process} />
         <FAQ items={data?.faqs ?? []} meta={meta.faq} />
+        <CtaBanner
+          eyebrow="Last stop"
+          heading="Still scrolling? Let's talk instead."
+          subheading="Skip the reading — send us a quick message and we'll reply within 24 hours."
+          primaryLabel="Get in Touch"
+          secondaryLabel="WhatsApp Us Now"
+        />
+
 
         <Contact email={contact.email} phone={contact.phone} meta={meta.contact} />
       </main>
