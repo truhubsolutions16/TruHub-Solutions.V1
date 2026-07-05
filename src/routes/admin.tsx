@@ -430,8 +430,7 @@ function ImageField({ value, onChange }: { value: string | null | undefined; onC
     const file = e.target.files?.[0]; if (!file) return;
     setBusy(true);
     try {
-      const buf = await file.arrayBuffer();
-      const base64 = btoa(String.fromCharCode(...new Uint8Array(buf)));
+      const base64 = await fileToBase64(file);
       const { url } = await upload({ data: { filename: file.name, contentType: file.type, base64 } });
       onChange(url);
       toast.success("Uploaded");
