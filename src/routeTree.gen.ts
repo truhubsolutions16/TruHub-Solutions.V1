@@ -9,9 +9,15 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ServiceAgreementRouteImport } from './routes/service-agreement'
+import { Route as RefundRouteImport } from './routes/refund'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as PortalRouteImport } from './routes/portal'
+import { Route as InvoiceRouteImport } from './routes/invoice'
 import { Route as EmployeeRouteImport } from './routes/employee'
+import { Route as CookiesRouteImport } from './routes/cookies'
 import { Route as BlogRouteImport } from './routes/blog'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as IndexRouteImport } from './routes/index'
@@ -20,9 +26,29 @@ import { Route as ApiContactRouteImport } from './routes/api/contact'
 import { Route as ApiChatRouteImport } from './routes/api/chat'
 import { Route as ApiPublicTrackRouteImport } from './routes/api/public/track'
 
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServiceAgreementRoute = ServiceAgreementRouteImport.update({
+  id: '/service-agreement',
+  path: '/service-agreement',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RefundRoute = RefundRouteImport.update({
+  id: '/refund',
+  path: '/refund',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PortalRoute = PortalRouteImport.update({
@@ -30,9 +56,19 @@ const PortalRoute = PortalRouteImport.update({
   path: '/portal',
   getParentRoute: () => rootRouteImport,
 } as any)
+const InvoiceRoute = InvoiceRouteImport.update({
+  id: '/invoice',
+  path: '/invoice',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EmployeeRoute = EmployeeRouteImport.update({
   id: '/employee',
   path: '/employee',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CookiesRoute = CookiesRouteImport.update({
+  id: '/cookies',
+  path: '/cookies',
   getParentRoute: () => rootRouteImport,
 } as any)
 const BlogRoute = BlogRouteImport.update({
@@ -75,9 +111,15 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/blog': typeof BlogRouteWithChildren
+  '/cookies': typeof CookiesRoute
   '/employee': typeof EmployeeRoute
+  '/invoice': typeof InvoiceRoute
   '/portal': typeof PortalRoute
+  '/privacy': typeof PrivacyRoute
+  '/refund': typeof RefundRoute
+  '/service-agreement': typeof ServiceAgreementRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/api/chat': typeof ApiChatRoute
   '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -87,9 +129,15 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/blog': typeof BlogRouteWithChildren
+  '/cookies': typeof CookiesRoute
   '/employee': typeof EmployeeRoute
+  '/invoice': typeof InvoiceRoute
   '/portal': typeof PortalRoute
+  '/privacy': typeof PrivacyRoute
+  '/refund': typeof RefundRoute
+  '/service-agreement': typeof ServiceAgreementRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/api/chat': typeof ApiChatRoute
   '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -100,9 +148,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/admin': typeof AdminRoute
   '/blog': typeof BlogRouteWithChildren
+  '/cookies': typeof CookiesRoute
   '/employee': typeof EmployeeRoute
+  '/invoice': typeof InvoiceRoute
   '/portal': typeof PortalRoute
+  '/privacy': typeof PrivacyRoute
+  '/refund': typeof RefundRoute
+  '/service-agreement': typeof ServiceAgreementRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
+  '/terms': typeof TermsRoute
   '/api/chat': typeof ApiChatRoute
   '/api/contact': typeof ApiContactRoute
   '/blog/$slug': typeof BlogSlugRoute
@@ -114,9 +168,15 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/blog'
+    | '/cookies'
     | '/employee'
+    | '/invoice'
     | '/portal'
+    | '/privacy'
+    | '/refund'
+    | '/service-agreement'
     | '/sitemap.xml'
+    | '/terms'
     | '/api/chat'
     | '/api/contact'
     | '/blog/$slug'
@@ -126,9 +186,15 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/blog'
+    | '/cookies'
     | '/employee'
+    | '/invoice'
     | '/portal'
+    | '/privacy'
+    | '/refund'
+    | '/service-agreement'
     | '/sitemap.xml'
+    | '/terms'
     | '/api/chat'
     | '/api/contact'
     | '/blog/$slug'
@@ -138,9 +204,15 @@ export interface FileRouteTypes {
     | '/'
     | '/admin'
     | '/blog'
+    | '/cookies'
     | '/employee'
+    | '/invoice'
     | '/portal'
+    | '/privacy'
+    | '/refund'
+    | '/service-agreement'
     | '/sitemap.xml'
+    | '/terms'
     | '/api/chat'
     | '/api/contact'
     | '/blog/$slug'
@@ -151,9 +223,15 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AdminRoute: typeof AdminRoute
   BlogRoute: typeof BlogRouteWithChildren
+  CookiesRoute: typeof CookiesRoute
   EmployeeRoute: typeof EmployeeRoute
+  InvoiceRoute: typeof InvoiceRoute
   PortalRoute: typeof PortalRoute
+  PrivacyRoute: typeof PrivacyRoute
+  RefundRoute: typeof RefundRoute
+  ServiceAgreementRoute: typeof ServiceAgreementRoute
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
+  TermsRoute: typeof TermsRoute
   ApiChatRoute: typeof ApiChatRoute
   ApiContactRoute: typeof ApiContactRoute
   ApiPublicTrackRoute: typeof ApiPublicTrackRoute
@@ -161,11 +239,39 @@ export interface RootRouteChildren {
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
       fullPath: '/sitemap.xml'
       preLoaderRoute: typeof SitemapDotxmlRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/service-agreement': {
+      id: '/service-agreement'
+      path: '/service-agreement'
+      fullPath: '/service-agreement'
+      preLoaderRoute: typeof ServiceAgreementRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/refund': {
+      id: '/refund'
+      path: '/refund'
+      fullPath: '/refund'
+      preLoaderRoute: typeof RefundRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/portal': {
@@ -175,11 +281,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PortalRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/invoice': {
+      id: '/invoice'
+      path: '/invoice'
+      fullPath: '/invoice'
+      preLoaderRoute: typeof InvoiceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/employee': {
       id: '/employee'
       path: '/employee'
       fullPath: '/employee'
       preLoaderRoute: typeof EmployeeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cookies': {
+      id: '/cookies'
+      path: '/cookies'
+      fullPath: '/cookies'
+      preLoaderRoute: typeof CookiesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/blog': {
@@ -248,9 +368,15 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AdminRoute: AdminRoute,
   BlogRoute: BlogRouteWithChildren,
+  CookiesRoute: CookiesRoute,
   EmployeeRoute: EmployeeRoute,
+  InvoiceRoute: InvoiceRoute,
   PortalRoute: PortalRoute,
+  PrivacyRoute: PrivacyRoute,
+  RefundRoute: RefundRoute,
+  ServiceAgreementRoute: ServiceAgreementRoute,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
+  TermsRoute: TermsRoute,
   ApiChatRoute: ApiChatRoute,
   ApiContactRoute: ApiContactRoute,
   ApiPublicTrackRoute: ApiPublicTrackRoute,
@@ -258,13 +384,3 @@ const rootRouteChildren: RootRouteChildren = {
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
-
-import type { getRouter } from './router.tsx'
-import type { startInstance } from './start.ts'
-declare module '@tanstack/react-start' {
-  interface Register {
-    ssr: true
-    router: Awaited<ReturnType<typeof getRouter>>
-    config: Awaited<ReturnType<typeof startInstance.getOptions>>
-  }
-}
