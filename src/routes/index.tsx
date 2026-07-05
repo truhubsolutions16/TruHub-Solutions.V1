@@ -7,6 +7,8 @@ import { getSiteSettings } from "@/lib/cms.functions";
 import { SiteLoader } from "@/components/site/loader";
 import { Navbar } from "@/components/site/navbar";
 import { Hero } from "@/components/site/hero";
+import { SocialProof } from "@/components/site/social-proof";
+import { CtaBanner } from "@/components/site/cta-banner";
 import { About } from "@/components/site/about";
 import { Founder } from "@/components/site/founder";
 import { CEO } from "@/components/site/ceo";
