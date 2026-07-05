@@ -3,7 +3,7 @@ import { Check } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
 
-const DEFAULT_PHOTO = "/ceo-truhub.webp";
+const DEFAULT_PHOTO = "/image.png";
 
 export function CEO({
   name = "Bharani Kumar G.",
