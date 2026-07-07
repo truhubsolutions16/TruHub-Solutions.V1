@@ -9,6 +9,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 import { Toaster } from "sonner";
 import { CookieConsent } from "../components/site/cookie-consent";
+import { Analytics } from "@vercel/analytics/react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
@@ -178,6 +179,7 @@ function RootComponent() {
       <Outlet />
       <Toaster theme="dark" position="bottom-center" richColors closeButton />
       <CookieConsent />
+      <Analytics />
     </QueryClientProvider>
   );
 }
