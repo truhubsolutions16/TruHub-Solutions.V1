@@ -19,8 +19,7 @@ const SITE_TITLE =
 const SITE_DESC =
 "TruHub Solutions offers Website Development, Branding, UI/UX Design, SEO, Digital Marketing, AI Automation and Software Solutions for startups and businesses across India.";
 const OG_IMAGE =
-  "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c71bd585-7f02-4fa8-b82d-d88c06e7398a";
-
+ "https://truhubsolutions.in/og-image.webp";
 function NotFoundComponent() {
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -104,6 +103,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+      {
+  rel: "canonical",
+  href: "https://truhubsolutions.in",
+},
       {
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
