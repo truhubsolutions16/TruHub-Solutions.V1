@@ -13,9 +13,11 @@ import { CookieConsent } from "../components/site/cookie-consent";
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
-const SITE_TITLE = "TruHub Solutions — Build. Grow. Succeed.";
+const SITE_TITLE =
+"TruHub Solutions | Website Development | Branding | Digital Marketing | UI/UX";
+
 const SITE_DESC =
-  "TruHub Solutions is a luxury tech agency crafting premium websites, branding, AI automation and digital solutions for ambitious brands.";
+"TruHub Solutions offers Website Development, Branding, UI/UX Design, SEO, Digital Marketing, AI Automation and Software Solutions for startups and businesses across India.";
 const OG_IMAGE =
   "https://storage.googleapis.com/gpt-engineer-file-uploads/attachments/og-images/c71bd585-7f02-4fa8-b82d-d88c06e7398a";
 
