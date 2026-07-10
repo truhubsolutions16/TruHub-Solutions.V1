@@ -6,7 +6,7 @@ import { SectionHeader, type SectionMeta } from "./section-header";
 const DEFAULT_PHOTO = "/image.png";
 
 export function CEO({
-  name = "Bharani Kumar G.",
+  name = "Bharani Kumar.G",
   title = "Chief Executive Officer",
   vision = "Great brands aren't built by chance — they're engineered. At TruHub, we turn every client's ambition into a digital experience that performs, scales and lasts.",
   skills = ["Client Success", "Operations", "Growth Strategy"],
