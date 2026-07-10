@@ -14,10 +14,10 @@ import appCss from "../styles.css?url";
 
 
 const SITE_TITLE =
-"TruHub Solutions | Website Development | Branding | Digital Marketing | UI/UX";
+"TruHub Solutions | Website Development | Branding | Digital Marketing | Business Software | UI/UX";
 
 const SITE_DESC =
-"TruHub Solutions offers Website Development, Branding, UI/UX Design, SEO, Digital Marketing, AI Automation and Software Solutions for startups and businesses across India.";
+"TruHub Solutions is a leading Website Development, Branding, UI/UX Design, SEO, Digital Marketing and AI Automation company helping startups and businesses grow with innovative digital solutions.";
 const OG_IMAGE =
  "https://truhubsolutions.in/og-image.webp";
 function NotFoundComponent() {
