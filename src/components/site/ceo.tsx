@@ -55,11 +55,11 @@ export function CEO({
                 style={{ background: "linear-gradient(135deg,#2563EB,#1EA7FF)" }}
               />
               <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0B1220]">
-            <figure>
+           <figure>
   <img
     src={src}
-    alt="Jayanth Gone - Founder & Chairman of TruHub Solutions"
-    title="Jayanth Gone - Founder & Chairman"
+    alt="Bharani Kumar G. - Chief Executive Officer of TruHub Solutions"
+    title="Bharani Kumar G. - CEO"
     width={640}
     height={800}
     className="h-full w-full object-cover"
@@ -68,7 +68,7 @@ export function CEO({
   />
 
   <figcaption className="sr-only">
-    Jayanth Gone — Founder & Chairman of TruHub Solutions
+    Bharani Kumar G. — Chief Executive Officer of TruHub Solutions
   </figcaption>
 </figure>
                 <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#030712] to-transparent" />
