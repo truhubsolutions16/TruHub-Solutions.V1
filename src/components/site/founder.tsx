@@ -33,15 +33,22 @@ export function Founder({
                 style={{ background: "linear-gradient(135deg,#1EA7FF,#2563EB)" }}
               />
               <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0B1220]">
-                <img
-                  src={src}
-                  alt={`${name}, ${title}`}
-                  width={640}
-                  height={800}
-                  className="h-full w-full object-cover"
-                  loading="lazy"
-                  decoding="async"
-                />
+                <figure>
+  <img
+    src={src}
+    alt="Jayanth Gone - Founder & Chairman of TruHub Solutions"
+    title="Jayanth Gone - Founder & Chairman"
+    width={640}
+    height={800}
+    className="h-full w-full object-cover"
+    loading="lazy"
+    decoding="async"
+  />
+
+  <figcaption className="sr-only">
+    Jayanth Gone — Founder & Chairman of TruHub Solutions
+  </figcaption>
+</figure>
                 <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#030712] to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4 rounded-xl glass p-3">
                   <div className="font-display text-lg font-semibold">{name}</div>
