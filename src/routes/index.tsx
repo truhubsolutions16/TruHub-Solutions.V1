@@ -25,7 +25,7 @@ import { ChatWidget } from "@/components/site/chat-widget";
 import { WHY_CHOOSE_US, PROCESS_STEPS } from "@/lib/site-data";
 
 
-const SITE_URL = "https://truhubsolutions.lovable.app";
+const SITE_URL = "https://truhubsolutions.in";
 
 export const Route = createFileRoute("/")({
   loader: ({ context }) => context.queryClient.ensureQueryData(siteContentQuery),
