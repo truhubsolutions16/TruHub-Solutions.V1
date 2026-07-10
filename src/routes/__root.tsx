@@ -11,7 +11,7 @@ import { Toaster } from "sonner";
 import { CookieConsent } from "../components/site/cookie-consent";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+
 
 const SITE_TITLE =
 "TruHub Solutions | Website Development | Branding | Digital Marketing | UI/UX";
@@ -60,9 +60,7 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
+ 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
       <div className="max-w-md text-center">
@@ -112,29 +110,43 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       },
     ],
     scripts: [
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "Organization",
-          name: "TruHub Solutions",
-          url: "https://pixel-kiss-forge.lovable.app",
-          logo: "https://pixel-kiss-forge.lovable.app/truhub-logo.webp",
-          description: SITE_DESC,
-          slogan: "Build. Grow. Succeed.",
-          email: "truhub.solutions@gmail.com",
-          telephone: "+91 7989367882",
-          founder: { "@type": "Person", name: "Jayanth Gone", jobTitle: "Founder & Chairman" },
-          sameAs: [],
-        }),
-      },
+    {
+  type: "application/ld+json",
+  children: JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Organization",
+
+    name: "TruHub Solutions",
+
+    url: "https://truhubsolutions.in",
+
+    logo: "https://truhubsolutions.in/truhub-logo.webp",
+
+    description:
+      "TruHub Solutions offers Website Development, Branding, UI/UX Design, SEO, Digital Marketing, AI Automation and Software Solutions.",
+
+    slogan: "Build. Grow. Succeed.",
+
+    email: "truhub.solutions@gmail.com",
+
+    telephone: "+91 7989367882",
+
+    founder: {
+      "@type": "Person",
+      name: "Jayanth Gone",
+      jobTitle: "Founder & Chairman",
+    },
+
+    sameAs: [],
+  }),
+},
       {
         type: "application/ld+json",
         children: JSON.stringify({
           "@context": "https://schema.org",
           "@type": "WebSite",
           name: "TruHub Solutions",
-          url: "https://pixel-kiss-forge.lovable.app",
+         url: "https://truhubsolutions.in",
         }),
       },
     ],
