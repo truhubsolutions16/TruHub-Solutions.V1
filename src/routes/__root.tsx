@@ -125,7 +125,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       logo: "https://truhubsolutions.in/truhub-logo.webp",
 
       description:
-       "TruHub Solutions provides Website Development, Branding, UI/UX Design, SEO, Digital Marketing, AI Automation and Custom Software Solutions to help startups and businesses grow faster.";
+       "TruHub Solutions provides Website Development, Branding, UI/UX Design, SEO, Digital Marketing, AI Automation and Custom Software Solutions to help startups and businesses grow faster.",
 
       slogan: "Build. Grow. Succeed.",
 
