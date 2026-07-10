@@ -125,11 +125,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       logo: "https://truhubsolutions.in/truhub-logo.webp",
 
       description:
-        "TruHub Solutions is a leading Website Development, Branding, UI/UX Design, SEO, Digital Marketing and AI Automation company helping startups and businesses grow with innovative digital solutions.",
+       "TruHub Solutions provides Website Development, Branding, UI/UX Design, SEO, Digital Marketing, AI Automation and Custom Software Solutions to help startups and businesses grow faster.";
 
       slogan: "Build. Grow. Succeed.",
 
-      email: "truhub.solutions@gmail.com",
+      email: "info@truhubsolutions.in",
       telephone: "+91 7989367882",
 
       founder: {
@@ -175,7 +175,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       "@context": "https://schema.org",
       "@type": "Person",
 
-      name: "Bharani Kumar G.",
+      name: "Bharani Kumar.G",
       jobTitle: "Chief Executive Officer",
 
       image: "https://truhubsolutions.in/image.png",
