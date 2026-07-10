@@ -17,8 +17,8 @@ const SITE_TITLE =
 "TruHub Solutions | Website Development | Branding | Digital Marketing | Business Software | UI/UX";
 
 const SITE_DESC =
-"TruHub Solutions is a leading Website Development, Branding, UI/UX Design, SEO, Digital Marketing and AI Automation company helping startups and businesses grow with innovative digital solutions.";
-const OG_IMAGE =
+const SITE_DESC =
+"TruHub Solutions provides Website Development, Branding, UI/UX Design, SEO, Digital Marketing, AI Automation and Custom Software Solutions to help startups and businesses grow faster.";
  "https://truhubsolutions.in/og-image.webp";
 function NotFoundComponent() {
   useEffect(() => {
