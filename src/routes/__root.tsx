@@ -112,47 +112,101 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap",
       },
     ],
-    scripts: [
-    {
-  type: "application/ld+json",
-  children: JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "Organization",
+  scripts: [
+  // Organization Schema
+  {
+    type: "application/ld+json",
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Organization",
 
-    name: "TruHub Solutions",
+      name: "TruHub Solutions",
+      url: "https://truhubsolutions.in",
+      logo: "https://truhubsolutions.in/truhub-logo.webp",
 
-    url: "https://truhubsolutions.in",
+      description:
+        "TruHub Solutions is a leading Website Development, Branding, UI/UX Design, SEO, Digital Marketing and AI Automation company helping startups and businesses grow with innovative digital solutions.",
 
-    logo: "https://truhubsolutions.in/truhub-logo.webp",
+      slogan: "Build. Grow. Succeed.",
 
-    description:
-      "TruHub Solutions offers Website Development, Branding, UI/UX Design, SEO, Digital Marketing, AI Automation and Software Solutions.",
+      email: "truhub.solutions@gmail.com",
+      telephone: "+91 7989367882",
 
-    slogan: "Build. Grow. Succeed.",
+      founder: {
+        "@type": "Person",
+        name: "Jayanth Gone",
+        jobTitle: "Founder & Chairman",
+      },
 
-    email: "truhub.solutions@gmail.com",
+      sameAs: [
+        // Add your official social media URLs here when available
+        // "https://www.linkedin.com/company/truhub-solutions",
+        // "https://www.instagram.com/truhubsolutions",
+        // "https://www.facebook.com/truhubsolutions"
+      ],
+    }),
+  },
 
-    telephone: "+91 7989367882",
-
-    founder: {
+  // Founder Schema
+  {
+    type: "application/ld+json",
+    children: JSON.stringify({
+      "@context": "https://schema.org",
       "@type": "Person",
+
       name: "Jayanth Gone",
       jobTitle: "Founder & Chairman",
-    },
 
-    sameAs: [],
-  }),
-},
-      {
-        type: "application/ld+json",
-        children: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          name: "TruHub Solutions",
-         url: "https://truhubsolutions.in",
-        }),
+      image: "https://truhubsolutions.in/founder-jayanth.webp",
+
+      url: "https://truhubsolutions.in",
+
+      worksFor: {
+        "@type": "Organization",
+        name: "TruHub Solutions",
       },
-    ],
+    }),
+  },
+
+  // CEO Schema
+  {
+    type: "application/ld+json",
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+
+      name: "Bharani Kumar G.",
+      jobTitle: "Chief Executive Officer",
+
+      image: "https://truhubsolutions.in/image.png",
+
+      url: "https://truhubsolutions.in",
+
+      worksFor: {
+        "@type": "Organization",
+        name: "TruHub Solutions",
+      },
+    }),
+  },
+
+  // Website Schema
+  {
+    type: "application/ld+json",
+    children: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+
+      name: "TruHub Solutions",
+      url: "https://truhubsolutions.in",
+
+      potentialAction: {
+        "@type": "SearchAction",
+        target: "https://truhubsolutions.in/?q={search_term_string}",
+        "query-input": "required name=search_term_string",
+      },
+    }),
+  },
+],
   }),
   shellComponent: RootShell,
   component: RootComponent,
