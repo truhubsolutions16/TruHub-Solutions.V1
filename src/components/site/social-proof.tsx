@@ -4,7 +4,7 @@ import {
   Award,
   Rocket,
   Shield,
-  Sparkles,
+  Monitor,
   TrendingUp,
   Users,
   Zap,
@@ -17,16 +17,16 @@ import {
  * No real client logos to avoid unauthorized use; uses trust badges instead.
  */
 export function SocialProof() {
-  const badges = [
-    { icon: Award, label: "Award-worthy craft" },
-    { icon: Shield, label: "SSL & GDPR ready" },
-    { icon: Rocket, label: "< 2s load times" },
-    { icon: Sparkles, label: "AI-integrated" },
-    { icon: TrendingUp, label: "SEO first" },
-    { icon: Users, label: "80+ happy clients" },
-    { icon: Zap, label: "24-hour response" },
-    { icon: Star, label: "5.0 average rating" },
-  ];
+const badges = [
+  { icon: Award, label: "Custom Website Development" },
+  { icon: Shield, label: "Secure & Reliable" },
+  { icon: Rocket, label: "Fast Performance" },
+  { icon: Monitor, label: "Modern UI/UX Design" },
+  { icon: TrendingUp, label: "SEO Optimized" },
+  { icon: Users, label: "Business-Focused Solutions" },
+  { icon: Zap, label: "24×7 Support" },
+  { icon: Star, label: "Affordable Pricing" },
+];
   // Duplicate for seamless marquee
   const track = [...badges, ...badges];
 
@@ -38,7 +38,7 @@ export function SocialProof() {
       <div className="container-x">
         <div className="mb-5 text-center">
           <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/40">
-            Trusted by ambitious founders across India & beyond
+            Trusted Web Development • SEO • Software Development • Digital Marketing
           </p>
         </div>
       </div>
