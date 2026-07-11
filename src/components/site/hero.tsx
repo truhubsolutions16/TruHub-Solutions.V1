@@ -120,7 +120,7 @@ export function Hero({
                 />
               <div className="absolute inset-0 grid place-items-center">
   <div className="font-display text-3xl font-bold text-white sm:text-5xl">
-    TruHub-Solutions<span className="text-[#38BDF8]">.in</span>
+    www.truhubsolutions<span className="text-[#38BDF8]">.in</span>
   </div>
 </div>
 
