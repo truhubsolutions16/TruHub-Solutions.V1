@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalLayout } from "@/components/site/legal-layout";
 
-const SITE_URL = "https://truhubsolutions.lovable.app";
+const SITE_URL = "https://truhubsolutions.in";
 const TITLE = "Refund Policy — TruHub Solutions";
 const DESC = "Refund and cancellation policy for TruHub Solutions services.";
 
@@ -42,7 +42,7 @@ function RefundPage() {
       <p>
         If you cancel within <strong>48 hours</strong> of paying the advance and before any work has begun, you
         may request a full refund. Requests must be made in writing to
-        <a href="mailto:truhub.solutions@gmail.com" className="text-[#38BDF8]"> truhub.solutions@gmail.com</a>.
+        <a href="mailto:info@truhubsolutions.in" className="text-[#38BDF8]"> info@truhubsolutions.in</a>.
       </p>
 
       <H>3. Cancellation after work has started</H>
@@ -66,7 +66,7 @@ function RefundPage() {
 
       <H>6. How to request a refund</H>
       <p>
-        Email <a href="mailto:truhub.solutions@gmail.com" className="text-[#38BDF8]">truhub.solutions@gmail.com</a>
+        Email <a href="mailto:info@truhubsolutions.in" className="text-[#38BDF8]">info@truhubsolutions.in</a>
         {" "}with your invoice number and reason. Approved refunds are processed within 7–10 business days to the
         original payment method.
       </p>
