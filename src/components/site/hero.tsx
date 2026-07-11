@@ -51,7 +51,7 @@ export function Hero({
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1EA7FF] opacity-75" />
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-[#1EA7FF]" />
               </span>
-              Premium digital studio · Est. 2024
+              Trusted by Businesses Across India
             </div>
 
             {/* Headline */}
