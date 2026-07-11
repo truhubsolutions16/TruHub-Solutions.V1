@@ -1,12 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 import {
-  Globe,
+   Award,
   Monitor,
-  Search,
-  Palette,
-  Server,
-  ShieldCheck,
+   Rocket,
+  Shield,
+  Star,
+  TrendingUp,
+  Users,
+  Zap,
 } from "lucide-react";
 
 /**
