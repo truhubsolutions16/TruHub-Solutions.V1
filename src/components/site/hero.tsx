@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { ArrowRight, Sparkles, Cpu, ShieldCheck } from "lucide-react";
+import { ArrowRight, Crown, Cpu, ShieldCheck } from "lucide-react";
 import { Aurora, Grid, Particles } from "./aurora";
 
 export function Hero({
@@ -47,10 +47,7 @@ export function Hero({
           >
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 rounded-full border border-[#1EA7FF]/25 bg-[#1EA7FF]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#38BDF8]">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#1EA7FF] opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-[#1EA7FF]" />
-              </span>
+             <Crown size={12} className="text-[#38BDF8]" />
               Trusted by Businesses Across India
             </div>
 
