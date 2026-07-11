@@ -153,10 +153,11 @@ export function Hero({
                 <span className="h-2 w-2 rounded-full bg-emerald-500/60" />
               </div>
               <div className="space-y-1 font-mono text-[10.5px] leading-relaxed text-white/55">
-                <p className="text-[#38BDF8]">$ building project_alpha</p>
-                <p>&gt; compiling components...</p>
-                <p>&gt; optimizing assets...</p>
-                <TerminalCursor />
+                <p className="text-[#38BDF8]">$ TruHub Solutions</p>
+<p>&gt; Building responsive websites...</p>
+<p>&gt; Improving Google rankings...</p>
+<p>&gt; Growing your business online...</p>
+<TerminalCursor />
               </div>
             </BentoCard>
 
