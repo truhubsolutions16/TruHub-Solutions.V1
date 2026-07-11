@@ -20,7 +20,8 @@ function BlogPost() {
   const { slug } = Route.useParams();
 
   const { data: post } = useSuspenseQuery(postQuery(slug));
-
+console.log("Slug:", slug);
+console.log("Post:", post);
   if (!post) {
     return (
       <div className="min-h-screen flex items-center justify-center">
