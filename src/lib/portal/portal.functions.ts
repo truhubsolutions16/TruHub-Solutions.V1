@@ -34,7 +34,7 @@ async function logActivity(ctx: any, action: string, entityType: string, entityI
 /* ---------------- EMPLOYEE GATE ---------------- */
 
 export const verifyEmployeeCode = createServerFn({ method: "POST" })
-  .inputValidator((d: unknown) => z.object({ code: z.string().min(1) }).parse(d))
+  .validator((d: unknown) => z.object({ code: z.string().min(1) }).parse(d))
   .handler(async ({ data }) => {
     const expected = process.env.EMPLOYEE_ACCESS_CODE;
     if (!expected) return { ok: false as const };
@@ -116,7 +116,7 @@ const roleSchema = z.object({
 
 export const assignRole = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => roleSchema.parse(d))
+  .validator((d: unknown) => roleSchema.parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
@@ -130,7 +130,7 @@ export const assignRole = createServerFn({ method: "POST" })
 
 export const revokeRole = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => roleSchema.parse(d))
+  .validator((d: unknown) => roleSchema.parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
@@ -190,7 +190,7 @@ const projectSchema = z.object({
 
 export const upsertProject = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => projectSchema.parse(d))
+  .validator((d: unknown) => projectSchema.parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const payload = { ...data, created_by: context.userId };
@@ -212,7 +212,7 @@ const projectStatusSchema = z.object({
 
 export const updateProjectStatus = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => projectStatusSchema.parse(d))
+  .validator((d: unknown) => projectStatusSchema.parse(d))
   .handler(async ({ data, context }) => {
     await requireStaff(context as never);
     const { id, ...patch } = data;
@@ -225,7 +225,7 @@ export const updateProjectStatus = createServerFn({ method: "POST" })
 
 export const deleteProject = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { error } = await context.supabase.from("projects").delete().eq("id", data.id);
@@ -238,7 +238,7 @@ export const deleteProject = createServerFn({ method: "POST" })
 
 export const listProjectFiles = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ project_id: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ project_id: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     const { data: files, error } = await context.supabase
       .from("project_files").select("*")
@@ -259,7 +259,7 @@ const fileSchema = z.object({
 
 export const addProjectFile = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => fileSchema.parse(d))
+  .validator((d: unknown) => fileSchema.parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { data: result, error } = await context.supabase
@@ -272,7 +272,7 @@ export const addProjectFile = createServerFn({ method: "POST" })
 
 export const deleteProjectFile = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { error } = await context.supabase.from("project_files").delete().eq("id", data.id);
@@ -319,7 +319,7 @@ const invoiceSchema = z.object({
 
 export const upsertInvoice = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => invoiceSchema.parse(d))
+  .validator((d: unknown) => invoiceSchema.parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const payload = {
@@ -336,7 +336,7 @@ export const upsertInvoice = createServerFn({ method: "POST" })
 
 export const deleteInvoice = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { error } = await context.supabase.from("invoices").delete().eq("id", data.id);
@@ -349,7 +349,7 @@ export const deleteInvoice = createServerFn({ method: "POST" })
 
 export const listProjectMessages = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ project_id: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ project_id: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     const { data: msgs, error } = await context.supabase
       .from("project_messages").select("*")
@@ -366,7 +366,7 @@ const messageSchema = z.object({
 
 export const sendProjectMessage = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => messageSchema.parse(d))
+  .validator((d: unknown) => messageSchema.parse(d))
   .handler(async ({ data, context }) => {
     const roles = await getRoles(context);
     const senderRole = roles.includes("admin") ? "admin"
@@ -433,7 +433,7 @@ export const listBackups = createServerFn({ method: "GET" })
 
 export const getBackupDownloadUrl = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
@@ -447,7 +447,7 @@ export const getBackupDownloadUrl = createServerFn({ method: "POST" })
 
 export const deleteBackup = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { supabaseAdmin } = await import("@/integrations/supabase/client.server");

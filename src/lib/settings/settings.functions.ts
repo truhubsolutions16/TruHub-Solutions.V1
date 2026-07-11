@@ -53,7 +53,7 @@ const settingsSchema = z.object({
 
 export const updateExtendedSettings = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => settingsSchema.parse(d))
+  .validator((d: unknown) => settingsSchema.parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { data: existing } = await context.supabase
@@ -101,7 +101,7 @@ const pageSeoSchema = z.object({
 
 export const upsertPageSeo = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => pageSeoSchema.parse(d))
+  .validator((d: unknown) => pageSeoSchema.parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { data: result, error } = await context.supabase
@@ -113,7 +113,7 @@ export const upsertPageSeo = createServerFn({ method: "POST" })
 
 export const deletePageSeo = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { error } = await context.supabase.from("page_seo").delete().eq("id", data.id);
@@ -144,7 +144,7 @@ const redirectSchema = z.object({
 
 export const upsertRedirect = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => redirectSchema.parse(d))
+  .validator((d: unknown) => redirectSchema.parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { data: result, error } = await context.supabase
@@ -156,7 +156,7 @@ export const upsertRedirect = createServerFn({ method: "POST" })
 
 export const deleteRedirect = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { error } = await context.supabase.from("redirects").delete().eq("id", data.id);
@@ -190,7 +190,7 @@ const mediaSchema = z.object({
 
 export const upsertMediaFile = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => mediaSchema.parse(d))
+  .validator((d: unknown) => mediaSchema.parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const payload = { ...data, uploaded_by: context.userId };
@@ -203,7 +203,7 @@ export const upsertMediaFile = createServerFn({ method: "POST" })
 
 export const deleteMediaFile = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { error } = await context.supabase.from("media_files").delete().eq("id", data.id);

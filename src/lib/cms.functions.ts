@@ -75,7 +75,7 @@ function escapeHtml(s: string) {
 }
 
 export const submitContactForm = createServerFn({ method: "POST" })
-  .inputValidator((d: unknown) => submissionSchema.parse(d))
+  .validator((d: unknown) => submissionSchema.parse(d))
   .handler(async ({ data }) => {
     const sb = publicClient();
     const { error } = await sb.from("contact_submissions").insert({
@@ -132,7 +132,7 @@ export const listBlogPosts = createServerFn({ method: "GET" }).handler(async () 
 });
 
 export const getBlogPost = createServerFn({ method: "GET" })
-  .inputValidator((d: unknown) => z.object({ slug: z.string().min(1).max(200) }).parse(d))
+  .validator((d: unknown) => z.object({ slug: z.string().min(1).max(200) }).parse(d))
   .handler(async ({ data }) => {
     const sb = publicClient();
     const { data: row, error } = await sb
@@ -179,7 +179,7 @@ export const getChatbotContext = createServerFn({ method: "GET" }).handler(async
 
 // ---------- Admin secret code gate ----------
 export const verifyAdminCode = createServerFn({ method: "POST" })
-  .inputValidator((d: unknown) => z.object({ code: z.string().min(1) }).parse(d))
+  .validator((d: unknown) => z.object({ code: z.string().min(1) }).parse(d))
   .handler(async ({ data }) => {
     const expected = process.env.ADMIN_ACCESS_CODE;
     if (!expected) return { ok: false as const };
@@ -207,7 +207,7 @@ export const getMyRole = createServerFn({ method: "GET" })
 // ---------- Bootstrap: promote a signed-in user to admin (requires secret code) ----------
 export const bootstrapAdmin = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ code: z.string().min(1) }).parse(d))
+  .validator((d: unknown) => z.object({ code: z.string().min(1) }).parse(d))
   .handler(async ({ data, context }) => {
     const expected = process.env.ADMIN_ACCESS_CODE;
     if (!expected || data.code !== expected) throw new Error("Invalid access code");
@@ -255,7 +255,7 @@ const tableSchema = z.enum(ADMIN_TABLES);
 
 export const adminUpsert = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) =>
+  .validator((d: unknown) =>
     z.object({ table: tableSchema, row: z.record(z.string(), z.any()) }).parse(d),
   )
   .handler(async ({ data, context }) => {
@@ -270,7 +270,7 @@ export const adminUpsert = createServerFn({ method: "POST" })
 
 export const adminDelete = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) =>
+  .validator((d: unknown) =>
     z.object({ table: tableSchema, id: z.string().uuid() }).parse(d),
   )
   .handler(async ({ data, context }) => {
@@ -295,7 +295,7 @@ export const adminListSubmissions = createServerFn({ method: "GET" })
 
 export const adminDeleteSubmission = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { error } = await context.supabase.from("contact_submissions").delete().eq("id", data.id);
@@ -306,7 +306,7 @@ export const adminDeleteSubmission = createServerFn({ method: "POST" })
 // ---------- Admin: upload to storage, return long-lived signed URL ----------
 export const adminUploadMedia = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) =>
+  .validator((d: unknown) =>
     z.object({
       filename: z.string().min(1),
       contentType: z.string().min(1),

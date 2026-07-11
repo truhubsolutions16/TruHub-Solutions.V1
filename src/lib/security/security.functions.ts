@@ -35,7 +35,7 @@ export const recordLoginAttempt = createServerFn({ method: "POST" })
 
 export const listActivityLogs = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ limit: z.number().int().min(1).max(500).default(100) }).parse(d))
+  .validator((d: unknown) => z.object({ limit: z.number().int().min(1).max(500).default(100) }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { data: rows, error } = await context.supabase
@@ -49,7 +49,7 @@ export const listActivityLogs = createServerFn({ method: "POST" })
 
 export const listLoginHistory = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ limit: z.number().int().min(1).max(500).default(100) }).parse(d))
+  .validator((d: unknown) => z.object({ limit: z.number().int().min(1).max(500).default(100) }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { data: rows, error } = await context.supabase

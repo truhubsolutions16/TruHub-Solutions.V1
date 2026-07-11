@@ -12,7 +12,7 @@ async function assertAdmin(sb: { from: (t: "user_roles") => { select: (c: "role"
 
 export const getAnalyticsOverview = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: { from: string; to: string }) => rangeSchema.parse(d))
+  .validator((d: { from: string; to: string }) => rangeSchema.parse(d))
   .handler(async ({ data, context }) => {
     await assertAdmin(context.supabase as never, context.userId);
     const sb = context.supabase;

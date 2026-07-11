@@ -47,7 +47,7 @@ export const listLeads = createServerFn({ method: "GET" })
 
 export const getLeadTimeline = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ leadId: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ leadId: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { data: rows, error } = await context.supabase
@@ -72,7 +72,7 @@ const updateLeadSchema = z.object({
 
 export const updateLead = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => updateLeadSchema.parse(d))
+  .validator((d: unknown) => updateLeadSchema.parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { id, ...patch } = data;
@@ -90,7 +90,7 @@ export const updateLead = createServerFn({ method: "POST" })
 
 export const addLeadNote = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ leadId: z.string().uuid(), message: z.string().min(1).max(4000) }).parse(d))
+  .validator((d: unknown) => z.object({ leadId: z.string().uuid(), message: z.string().min(1).max(4000) }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { error } = await context.supabase.from("lead_timeline").insert({
@@ -105,7 +105,7 @@ export const addLeadNote = createServerFn({ method: "POST" })
 
 export const deleteLead = createServerFn({ method: "POST" })
   .middleware([requireSupabaseAuth])
-  .inputValidator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
+  .validator((d: unknown) => z.object({ id: z.string().uuid() }).parse(d))
   .handler(async ({ data, context }) => {
     await requireAdmin(context as never);
     const { data: prev } = await context.supabase.from("contact_submissions").select("*").eq("id", data.id).maybeSingle();
