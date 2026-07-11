@@ -5,6 +5,7 @@ import {
   Monitor,
   Search,
   Palette,
+  crown,
   Server,
   ShieldCheck,
 } from "lucide-react";
