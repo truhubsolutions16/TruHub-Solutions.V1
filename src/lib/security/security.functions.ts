@@ -14,7 +14,7 @@ async function requireAdmin(ctx: any) {
 }
 
 export const recordLoginAttempt = createServerFn({ method: "POST" })
-  .inputValidator((d: unknown) =>
+  validator((d: unknown) =>
     z.object({
       email: z.string().email().max(255),
       success: z.boolean(),
