@@ -4,11 +4,13 @@ import {
   Award,
   Rocket,
   Shield,
-  Monitor,
   TrendingUp,
   Users,
   Zap,
   Star,
+  MonitorSmartphone,
+  Code,
+  Search,
 } from "lucide-react";
 
 /**
