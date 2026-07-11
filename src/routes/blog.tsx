@@ -6,7 +6,7 @@ import { FloatingWhatsApp } from "@/components/site/whatsapp";
 import { ChatWidget } from "@/components/site/chat-widget";
 import { listBlogPosts } from "@/lib/cms.functions";
 
-const SITE_URL = "https://truhubsolutions.lovable.app";
+const SITE_URL = "https://truhubsolutions.in";
 
 const postsQuery = queryOptions({
   queryKey: ["blog-posts"],
@@ -72,7 +72,7 @@ function BlogIndex() {
           </div>
         )}
       </main>
-      <Footer email="truhub.solutions@gmail.com" phone="+91 7989367882" />
+      <Footer email="info@truhubsolutions.in" phone="+91 7989367882" />
       <FloatingWhatsApp />
       <ChatWidget />
     </div>
