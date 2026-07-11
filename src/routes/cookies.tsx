@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalLayout } from "@/components/site/legal-layout";
 
-const SITE_URL = "https://truhubsolutions.lovable.app";
+const SITE_URL = "https://truhubsolutions.in";
 const TITLE = "Cookie Policy — TruHub Solutions";
 const DESC = "How TruHub Solutions uses cookies and similar technologies.";
 
@@ -61,7 +61,7 @@ function CookiePage() {
 
       <H>6. Contact</H>
       <p>
-        Questions? Email <a href="mailto:truhub.solutions@gmail.com" className="text-[#38BDF8]">truhub.solutions@gmail.com</a>.
+        Questions? Email <a href="mailto:info@truhubsolutions.in" className="text-[#38BDF8]">info@truhubsolutions.in</a>.
       </p>
     </LegalLayout>
   );
