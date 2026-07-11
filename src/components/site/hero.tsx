@@ -118,19 +118,33 @@ export function Hero({
                     backgroundSize: "28px 28px",
                   }}
                 />
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="font-display text-3xl font-bold text-white sm:text-5xl">
-                    TruHub<span className="text-[#38BDF8]">.</span>
-                  </div>
-                </div>
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#030712] via-[#030712]/70 to-transparent p-4">
-                  <div className="text-[10px] font-bold uppercase tracking-widest text-[#38BDF8]">
-                    Recent Launch
-                  </div>
-                  <div className="mt-0.5 text-sm font-semibold text-white">
-                    Quantum Analytics SaaS
-                  </div>
-                </div>
+               <div className="absolute inset-0 grid place-items-center">
+  <div className="text-center">
+    <img
+      src="/logo.png"
+      alt="TruHub Solutions"
+      className="mx-auto h-20 w-auto"
+    />
+
+    <h3 className="mt-6 text-3xl font-bold text-white">
+      TruHub Solutions
+    </h3>
+
+    <p className="mt-2 text-white/70">
+      Web Development • SEO • Branding
+    </p>
+  </div>
+</div>
+
+<div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#030712] via-[#030712]/70 to-transparent p-6">
+  <div className="text-xs uppercase tracking-widest text-[#38BDF8]">
+    Building Digital Success
+  </div>
+
+  <div className="mt-1 text-lg font-semibold text-white">
+    Websites that Grow Businesses
+  </div>
+</div>
               </div>
             </BentoCard>
 
