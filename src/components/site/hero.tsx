@@ -121,7 +121,7 @@ export function Hero({
                <div className="absolute inset-0 grid place-items-center">
   <div className="text-center">
     <img
-      src="/logo.png"
+      src="/truhub-logo.png"
       alt="TruHub Solutions"
       className="mx-auto h-20 w-auto"
     />
