@@ -6,7 +6,7 @@ export function LegalLayout({
   title,
   updated,
   children,
-  email = "truhub.solutions@gmail.com",
+  email = "info@truhubsolutions.in",
   phone = "+91 7989367882",
 }: {
   title: string;
