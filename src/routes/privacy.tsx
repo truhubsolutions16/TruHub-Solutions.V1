@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalLayout } from "@/components/site/legal-layout";
 
-const SITE_URL = "https://truhubsolutions.lovable.app";
+const SITE_URL = "https://truhubsolutions.in",
 const TITLE = "Privacy Policy — TruHub Solutions";
 const DESC = "How TruHub Solutions collects, uses, and protects your personal information.";
 
@@ -69,7 +69,7 @@ function PrivacyPage() {
       <H>6. Your rights</H>
       <p>
         You may request access, correction, deletion, or export of your data, and object to certain processing.
-        Contact us at <a href="mailto:truhub.solutions@gmail.com" className="text-[#38BDF8]">truhub.solutions@gmail.com</a>.
+        Contact us at <a href="mailto:info@truhubsolutions.in" className="text-[#38BDF8]">info@truhubsolutions.in</a>.
       </p>
 
       <H>7. Security</H>
@@ -92,7 +92,7 @@ function PrivacyPage() {
 
       <H>11. Contact</H>
       <p>
-        TruHub Solutions · <a href="mailto:truhub.solutions@gmail.com" className="text-[#38BDF8]">truhub.solutions@gmail.com</a> ·
+        TruHub Solutions · <a href="mailto:info@truhubsolutions.in" className="text-[#38BDF8]">info@truhubsolutions.in</a> ·
         {" "}<a href="tel:+917989367882" className="text-[#38BDF8]">+91 7989367882</a>
       </p>
     </LegalLayout>
