@@ -166,14 +166,18 @@ export function Hero({
               <div className="text-[10px] font-bold uppercase tracking-widest text-white/40">
                 Stack
               </div>
-              <div className="flex flex-wrap items-center gap-2.5">
-                <StackChip icon={<Sparkles size={12} />} label="Design" />
-                <StackChip icon={<Cpu size={12} />} label="AI" highlight />
-                <StackChip label="React" />
-                <StackChip label="TS" />
-                <StackChip label="Node" />
-                <StackChip icon={<ShieldCheck size={12} />} label="Secure" />
-              </div>
+             <div className="text-[10px] font-bold uppercase tracking-widest text-white/40">
+  Our Services
+</div>
+
+<div className="flex flex-wrap items-center gap-2.5">
+  <StackChip label="Web Development" />
+  <StackChip label="SEO" highlight />
+  <StackChip label="Branding" />
+  <StackChip label="UI/UX" />
+  <StackChip label="Digital Marketing" />
+  <StackChip label="Hosting" />
+</div>
             </BentoCard>
           </motion.div>
         </div>
