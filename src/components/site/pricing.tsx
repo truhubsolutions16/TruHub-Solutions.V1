@@ -1,5 +1,5 @@
 "use client";
-import { Check, crown } from "lucide-react";
+import { Check, Crown } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
 
@@ -38,7 +38,7 @@ export function Pricing({
                 {p.tagline && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full border border-white/10 bg-gradient-to-r from-[#1EA7FF] to-[#2563EB] px-3 py-1 text-xs font-semibold">
                     <span className="inline-flex items-center gap-1">
-                      <Star size={12} fill="currentColor" />
+                      <Crown size={12} fill="currentColor" />
                       {p.tagline}
                     </span>
                   </div>
