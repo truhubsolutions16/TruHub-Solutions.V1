@@ -120,22 +120,22 @@ export function Hero({
                 />
               <div className="absolute inset-0 grid place-items-center">
   <div className="font-display text-3xl font-bold text-white sm:text-5xl">
-    TruHub<span className="text-[#38BDF8]">.</span>
+    TruHub-Solutions<span className="text-[#38BDF8]">.</span>
   </div>
 </div>
 
 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#030712] via-[#030712]/70 to-transparent p-4">
   <div className="text-[10px] font-bold uppercase tracking-widest text-[#38BDF8]">
-    Recent Launch
+    
   </div>
   <div className="mt-0.5 text-sm font-semibold text-white">
-    Quantum Analytics SaaS
+    
   </div>
 </div>
 
 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#030712] via-[#030712]/70 to-transparent p-6">
   <div className="text-xs uppercase tracking-widest text-[#38BDF8]">
-    Building Digital Success
+    
   </div>
 
   <div className="mt-1 text-lg font-semibold text-white">
