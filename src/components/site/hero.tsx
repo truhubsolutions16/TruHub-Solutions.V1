@@ -37,7 +37,7 @@ export function Hero({
       />
 
       <div className="container-x relative z-10">
-        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        <div className="grid grid-cols-1 items-center gap-12 lg:grid-cols-[1.1fr_1.25fr] lg:gap-16">
           {/* LEFT: Copy + CTAs + Stats */}
           <motion.div
             initial={{ opacity: 0, x: -32 }}
