@@ -9,7 +9,7 @@ export const blogPosts = [
     excerpt:
       "Discover why every business needs a professional website in 2026.",
 
-    cover_url: "/images/blog/professional-website-2026.webp",
+  cover_url: "/professional-website-2026.webp",
 
     published_at: "2026-07-11",
 
