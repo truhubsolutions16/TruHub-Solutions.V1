@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalLayout } from "@/components/site/legal-layout";
 
-const SITE_URL = "https://truhubsolutions.lovable.app";
+const SITE_URL = "https://truhubsolutions.in";
 const TITLE = "Service Agreement — TruHub Solutions";
 const DESC = "Master service agreement between TruHub Solutions and its clients.";
 
@@ -117,7 +117,7 @@ function ServiceAgreementPage() {
 
       <H>Contact</H>
       <p>
-        TruHub Solutions · <a href="mailto:truhub.solutions@gmail.com" className="text-[#38BDF8]">truhub.solutions@gmail.com</a> ·
+        TruHub Solutions · <a href="mailto:info@truhubsolutions.in" className="text-[#38BDF8]">info@truhubsolutions.in</a> ·
         {" "}<a href="tel:+917989367882" className="text-[#38BDF8]">+91 7989367882</a>
       </p>
     </LegalLayout>
