@@ -9,7 +9,7 @@ import { FloatingWhatsApp } from "@/components/site/whatsapp";
 import { ChatWidget } from "@/components/site/chat-widget";
 import { getBlogPost } from "@/lib/cms.functions";
 
-const SITE_URL = "https://truhubsolutions.lovable.app";
+const SITE_URL = "https://truhubsolutions.in";
 
 function postQuery(slug: string) {
   return queryOptions({
@@ -90,7 +90,7 @@ function BlogPost() {
           </div>
         </article>
       </main>
-      <Footer email="truhub.solutions@gmail.com" phone="+91 7989367882" />
+      <Footer email="info@truhubsolutions.in" phone="+91 7989367882" />
       <FloatingWhatsApp />
       <ChatWidget />
     </div>
