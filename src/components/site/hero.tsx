@@ -132,7 +132,6 @@ export function Hero({
     Quantum Analytics SaaS
   </div>
 </div>
-</div>
 
 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#030712] via-[#030712]/70 to-transparent p-6">
   <div className="text-xs uppercase tracking-widest text-[#38BDF8]">
