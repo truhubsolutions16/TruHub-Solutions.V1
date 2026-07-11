@@ -1,15 +1,15 @@
 "use client";
 import { useRef, type MouseEvent } from "react";
 import {
-  Bot, Briefcase, Code, Globe, Image as ImageIcon, MessageCircle,
-  Palette, Rocket, Search, Sparkles, Wrench, Zap, type LucideIcon,
+  Bot, Briefcase, Code, Crown, Globe, Image as ImageIcon, MessageCircle,
+  Palette, Rocket, Search, Wrench, Zap, type LucideIcon,
 } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
 
 const ICONS: Record<string, LucideIcon> = {
   code: Code, rocket: Rocket, briefcase: Briefcase, image: ImageIcon,
-  palette: Palette, search: Search, sparkles: Sparkles, "message-circle": MessageCircle,
+  palette: Palette, search: Search, sparkles: Crown, crown: Crown, "message-circle": MessageCircle,
   bot: Bot, wrench: Wrench, globe: Globe, zap: Zap,
 };
 
@@ -58,7 +58,7 @@ export function Services({ items, meta }: { items: Array<{ id: string; title: st
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {items.map((s, i) => {
-            const Icon = ICONS[s.icon] ?? Sparkles;
+            const Icon = ICONS[s.icon] ?? Crown;
             return (
               <Reveal key={s.id} delay={i % 4}>
                 <TiltCard>
