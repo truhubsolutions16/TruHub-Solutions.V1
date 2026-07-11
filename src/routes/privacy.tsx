@@ -1,8 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { LegalLayout } from "@/components/site/legal-layout";
 
-const SITE_URL = "https://truhubsolutions.in",
-const TITLE = "Privacy Policy — TruHub Solutions",
+const SITE_URL = "https://truhubsolutions.in";
+const TITLE = "Privacy Policy — TruHub Solutions";
 const DESC = "How TruHub Solutions collects, uses, and protects your personal information.";
 
 export const Route = createFileRoute("/privacy")({
