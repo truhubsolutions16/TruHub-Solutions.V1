@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpRight, Crown, UtensilsCrossed, ExternalLink, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Crown, UtensilsCrossed, ExternalLink, Star, type LucideIcon } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
 
@@ -11,6 +11,7 @@ type FeaturedProject = {
   url: string;
   tags: string[];
   prestigious?: boolean;
+  premium?: boolean;
   accent: string;
   icon: LucideIcon;
   eyebrow: string;
@@ -38,6 +39,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
       "A full digital dine-in experience — interactive menus, table ordering, and a modern storefront that brings the restaurant online.",
     url: "https://khaleel-bhai-familyrestraunt.vercel.app",
     tags: ["Dine-in Menu", "Ordering", "Storefront"],
+    premium: true,
     accent: "from-amber-400/30 via-orange-500/20 to-rose-500/10",
     icon: UtensilsCrossed,
     eyebrow: "Featured Case Study",
@@ -53,21 +55,35 @@ function FeaturedBanner({ project, index }: { project: FeaturedProject; index: n
         target="_blank"
         rel="noopener noreferrer"
         className={`group relative block overflow-hidden rounded-3xl border ${
-          project.prestigious
-            ? "border-[#38BDF8]/40"
-            : "border-white/10"
+          project.prestigious ? "border-amber-300/40" : "border-white/10"
         } bg-[#0B1220] transition-all duration-500 hover:-translate-y-1 hover:border-[#38BDF8]/60`}
         style={{
           boxShadow: project.prestigious
-            ? "0 30px 80px -30px rgba(56,189,248,0.35), 0 0 0 1px rgba(56,189,248,0.15) inset"
+            ? "0 30px 80px -30px rgba(251,191,36,0.45), 0 0 0 1px rgba(251,191,36,0.20) inset"
             : "0 20px 60px -30px rgba(0,0,0,0.8)",
         }}
       >
+        {/* Shine sweep */}
+        <span
+          aria-hidden
+          className="pointer-events-none absolute inset-0 z-[5] overflow-hidden rounded-3xl"
+        >
+          <span className="absolute -inset-y-10 -left-1/2 w-1/2 rotate-12 bg-gradient-to-r from-transparent via-white/20 to-transparent blur-xl portfolio-shine" />
+        </span>
+
         {/* Prestigious ribbon */}
         {project.prestigious && (
-          <div className="absolute left-0 top-0 z-10 flex items-center gap-1.5 rounded-br-2xl bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 px-4 py-2 text-[11px] font-semibold uppercase tracking-widest text-[#0B1220] shadow-lg">
-            <Crown size={14} />
+          <div className="absolute left-0 top-0 z-10 flex items-center gap-1.5 rounded-br-2xl bg-gradient-to-r from-amber-400 via-amber-300 to-yellow-500 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-[#0B1220] shadow-lg sm:px-4 sm:py-2 sm:text-[11px]">
+            <Crown size={13} />
             Prestigious Project
+          </div>
+        )}
+
+        {/* Premium ribbon */}
+        {project.premium && (
+          <div className="absolute right-0 top-0 z-10 flex items-center gap-1.5 rounded-bl-2xl bg-gradient-to-r from-fuchsia-500 via-pink-500 to-amber-400 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-lg sm:px-4 sm:py-2 sm:text-[11px]">
+            <Star size={13} className="animate-pulse" />
+            Contains Premium Features
           </div>
         )}
 
@@ -77,16 +93,16 @@ function FeaturedBanner({ project, index }: { project: FeaturedProject; index: n
         />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(255,255,255,0.08),transparent_50%)]" />
 
-        <div className="relative flex flex-col gap-6 p-6 md:p-10">
-          <div className="flex items-center gap-2 text-[11px] uppercase tracking-widest text-white/60">
+        <div className="relative z-[6] flex flex-col gap-5 p-5 pt-14 sm:gap-6 sm:p-8 sm:pt-16 md:p-10 md:pt-14">
+          <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-white/60 sm:text-[11px]">
             <Icon size={14} className={project.prestigious ? "text-amber-300" : "text-[#38BDF8]"} />
             {project.eyebrow}
           </div>
           <div>
-            <h3 className="font-display text-2xl font-semibold leading-tight text-white md:text-4xl">
+            <h3 className="font-display text-xl font-semibold leading-tight text-white sm:text-2xl md:text-4xl">
               {project.title}
             </h3>
-            <p className="mt-2 text-sm font-medium uppercase tracking-wider text-[#38BDF8] md:text-base">
+            <p className="mt-2 text-xs font-medium uppercase tracking-wider text-[#38BDF8] sm:text-sm md:text-base">
               {project.subtitle}
             </p>
           </div>
@@ -105,18 +121,18 @@ function FeaturedBanner({ project, index }: { project: FeaturedProject; index: n
             ))}
           </div>
 
-          <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white backdrop-blur transition group-hover:bg-[#38BDF8] group-hover:text-[#0B1220]">
               Visit live site
               <ExternalLink size={14} />
             </div>
-            <span className="truncate text-xs text-white/40">
+            <span className="max-w-full truncate text-xs text-white/40">
               {project.url.replace("https://", "")}
             </span>
           </div>
         </div>
 
-        <div className="absolute right-4 top-4 flex h-11 w-11 items-center justify-center rounded-full bg-white/10 backdrop-blur transition group-hover:bg-[#38BDF8]">
+        <div className="absolute bottom-4 right-4 z-[6] flex h-10 w-10 items-center justify-center rounded-full bg-white/10 backdrop-blur transition group-hover:bg-[#38BDF8] sm:top-14 sm:h-11 sm:w-11">
           <ArrowUpRight size={18} />
         </div>
       </a>
