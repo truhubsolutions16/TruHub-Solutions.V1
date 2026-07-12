@@ -66,7 +66,7 @@ export function Hero({
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.7 }}
-              className="max-w-xl text-base leading-relaxed text-white/60 sm:text-lg"
+              className="max-w-xl font-sans text-base font-normal leading-relaxed text-white/60 sm:text-lg"
             >
               {subtitle}
             </motion.p>
@@ -78,11 +78,14 @@ export function Hero({
               transition={{ delay: 0.5, duration: 0.7 }}
               className="flex flex-wrap items-center gap-3 pt-1"
             >
-              <a href="#contact" className="btn-primary btn-primary-hover group">
+              <a
+                href="#contact"
+                className="btn-primary btn-primary-hover group font-sans font-semibold"
+              >
                 {ctaPrimary}
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
-              <a href="/portfolio" className="btn-ghost btn-ghost-hover">
+              <a href="/portfolio" className="btn-ghost btn-ghost-hover font-sans font-semibold">
                 {ctaSecondary}
               </a>
             </motion.div>
@@ -92,7 +95,7 @@ export function Hero({
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.65, duration: 0.7 }}
-              className="flex flex-wrap gap-x-5 gap-y-2 pt-2 text-[12px] font-medium text-white/60"
+              className="flex flex-wrap gap-x-5 gap-y-2 pt-2 font-sans text-[12px] font-normal text-white/60"
             >
               {["Free Consultation", "Fast Delivery", "Lifetime Support Available", "Transparent Pricing"].map((t) => (
                 <li key={t} className="inline-flex items-center gap-1.5">
@@ -104,9 +107,9 @@ export function Hero({
 
             {/* Stats */}
             <div className="flex gap-10 pt-8">
-              {/*   <Stat value={120} suffix="+" label="Projects" /> */} 
-              <Stat value={99} suffix="%" label="Client Satisfaction" />
-              <Stat value={24} suffix="/7H" label="Support" />
+              <Stat value={120} suffix="+" label="Projects" />
+              <Stat value={99} suffix="%" label="Satisfaction" />
+              <Stat value={24} suffix="h" label="Support" />
             </div>
           </motion.div>
 
@@ -144,7 +147,7 @@ export function Hero({
 
                 <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#030712] via-[#030712]/70 to-transparent p-6">
                   <div className="text-xs uppercase tracking-widest text-[#38BDF8]"></div>
-                  <div className="mt-1 text-lg font-semibold text-white">
+                  <div className="mt-1 font-display text-lg font-bold text-white">
                     Websites that Grow Businesses
                   </div>
                 </div>
@@ -241,11 +244,13 @@ function Stat({ value, suffix = "", label }: { value: number; suffix?: string; l
   }, [inView, value]);
   return (
     <div ref={ref} className="space-y-1">
-      <div className="text-2xl font-bold tracking-tighter text-white tabular-nums">
+      <div className="font-display text-2xl font-extrabold tracking-tighter text-white tabular-nums">
         {n}
         {suffix}
       </div>
-      <div className="text-[10px] font-bold uppercase tracking-widest text-white/40">{label}</div>
+      <div className="font-sans text-[10px] font-medium uppercase tracking-widest text-white/40">
+        {label}
+      </div>
     </div>
   );
 }
