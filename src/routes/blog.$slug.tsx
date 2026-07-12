@@ -20,11 +20,7 @@ function BlogPost() {
   const { slug } = Route.useParams();
 
   const { data: post } = useSuspenseQuery(postQuery(slug));
-  console.log(post);
-console.log(typeof post?.body);
-console.log(post?.body);
-console.log("Slug:", slug);
-console.log("Post:", post);
+ 
   if (!post) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -57,10 +53,9 @@ console.log("Post:", post);
           </p>
         )}
 
-      <article
-  className="prose prose-invert max-w-none"
-  dangerouslySetInnerHTML={{ __html: post.body }}
-/>
+    <article className="prose prose-invert max-w-none whitespace-pre-wrap">
+        {post.body_md}
+      </article>
       </main>
 
       <Footer
