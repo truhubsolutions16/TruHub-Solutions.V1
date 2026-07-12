@@ -59,9 +59,9 @@ const FALLBACK = {
   hero: {
     headline: "We Build Digital Experiences That Grow Businesses.",
     subtitle:
-      "Premium websites, branding, AI automation and digital solutions crafted to help businesses grow online.",
+      "We design and develop premium websites, AI-powered applications, business software, SaaS platforms, and digital experiences that help ambitious businesses grow faster.",
     cta_primary_label: "Start Your Project",
-    cta_secondary_label: "Explore Portfolio",
+   cta_secondary_label: "Book Free Consultation",
   },
   about: {
     heading: "A luxury technology studio for ambitious brands.",
