@@ -82,11 +82,24 @@ export function Hero({
                 {ctaPrimary}
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
-              <a href="#portfolio" className="btn-ghost btn-ghost-hover">
+               <a href="#contact" className="btn-ghost btn-ghost-hover">
                 {ctaSecondary}
               </a>
             </motion.div>
-
+            {/* Trust badges */}
+            <motion.ul
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.65, duration: 0.7 }}
+              className="flex flex-wrap gap-x-5 gap-y-2 pt-2 text-[12px] font-medium text-white/60"
+            >
+              {["Free Consultation", "Fast Delivery", "Lifetime Support Available", "Transparent Pricing"].map((t) => (
+                <li key={t} className="inline-flex items-center gap-1.5">
+                  <Check size={14} className="text-[#38BDF8]" strokeWidth={3} />
+                  <span>{t}</span>
+                </li>
+              ))}
+            </motion.ul>
           </motion.div>
 
           {/* RIGHT: Bento Studio Grid */}
