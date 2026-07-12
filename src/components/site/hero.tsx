@@ -106,7 +106,7 @@ export function Hero({
             <div className="flex gap-10 pt-8">
               {/*   <Stat value={120} suffix="+" label="Projects" /> */} 
               <Stat value={99} suffix="%" label="Client Satisfaction" />
-              <Stat value={24} suffix="/7h" label="Support" />
+              <Stat value={24} suffix="/7H" label="Support" />
             </div>
           </motion.div>
 
