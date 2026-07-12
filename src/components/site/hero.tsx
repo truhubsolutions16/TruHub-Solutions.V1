@@ -104,7 +104,7 @@ export function Hero({
 
             {/* Stats */}
             <div className="flex gap-10 pt-8">
-          //    <Stat value={120} suffix="+" label="Projects" />
+              {/*   <Stat value={120} suffix="+" label="Projects" /> */} 
               <Stat value={99} suffix="%" label="Satisfaction" />
               <Stat value={24} suffix="h" label="Support" />
             </div>
