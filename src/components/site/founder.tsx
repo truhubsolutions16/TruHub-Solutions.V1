@@ -2,7 +2,7 @@
 import { Check } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
-const founderPhoto = { url: "/founder-jayanth.webp" };
+import founderImage from "@/public/founder-jayanth.webp";
 
 export function Founder({
   name,
@@ -19,7 +19,10 @@ export function Founder({
   photoUrl?: string | null;
   meta?: SectionMeta;
 }) {
-import founderImage from "@/public/founder-jayanth.webp";
+<img
+  src={founderImage}
+  alt="Jayanth Gone - Founder & Chairman of TruHub Solutions"
+/>
   return (
     <section id="founder" className="section relative">
       <div className="container-x">
