@@ -2,8 +2,7 @@
 import { Check } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
-<img
-  src="/founder-jayanth.webp"
+const founderPhoto = { url: "/founder-jayanth.webp" };
 
 export function Founder({
   name,
@@ -20,19 +19,10 @@ export function Founder({
   photoUrl?: string | null;
   meta?: SectionMeta;
 }) {
-
+  const src = photoUrl || founderPhoto.url;
   return (
     <section id="founder" className="section relative">
-      <div className<img
-  src={founderImage}
-  alt="Jayanth Gone - Founder & Chairman of TruHub Solutions"
-  title="Jayanth Gone - Founder & Chairman"
-  width={640}
-  height={800}
-  className="h-full w-full object-cover"
-  loading="lazy"
-  decoding="async"
-/>="container-x">
+      <div className="container-x">
         <SectionHeader meta={meta} eyebrow="Meet the Founder" heading="The mind behind the mission" />
 
         <div className="grid gap-10 lg:grid-cols-[1.05fr_1.2fr] lg:items-center">
@@ -44,8 +34,8 @@ export function Founder({
               />
               <div className="relative overflow-hidden rounded-[1.75rem] border border-white/10 bg-[#0B1220]">
                 <figure>
- <img
-  src="/founder-jayanth.webp"
+  <img
+    src={src}
     alt="Jayanth Gone - Founder & Chairman of TruHub Solutions"
     title="Jayanth Gone - Founder & Chairman"
     width={640}
