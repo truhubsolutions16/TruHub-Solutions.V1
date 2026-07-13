@@ -19,7 +19,7 @@ export function Founder({
   photoUrl?: string | null;
   meta?: SectionMeta;
 }) {
-  const src = photoUrl || founderPhoto.url;
+  const src = "/founder-jayanth.webp";
   return (
     <section id="founder" className="section relative">
       <div className="container-x">
