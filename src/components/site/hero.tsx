@@ -82,9 +82,9 @@ export function Hero({
                 {ctaPrimary}
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
-               <a Primary → #contact  Secondary → /portfolio className="btn-ghost btn-ghost-hover">
-                {ctaSecondary}
-              </a>
+              <a href="#contact" className="btn-ghost btn-ghost-hover">
+  {ctaSecondary}
+</a>
             </motion.div>
             {/* Trust badges */}
             <motion.ul
@@ -200,7 +200,10 @@ function HeadlineWithGradient({ text }: { text: string }) {
   // "Grow", "Business", or fall back to the middle word.
   const words = text.split(" ");
   const keywords = ["Experiences", "Digital", "Grow", "Growth", "Businesses.", "Business."];
-  let idx = words.findIndex((w) => const clean = w.replace(/[.,!?]/g, ""));
+  let idx = words.findIndex((w) => {
+  const clean = w.replace(/[.,!?]/g, "");
+  return keywords.includes(clean);
+});
   if (idx === -1) idx = Math.floor(words.length / 2);
   return (
     <>
