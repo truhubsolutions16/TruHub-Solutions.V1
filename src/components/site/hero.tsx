@@ -100,12 +100,13 @@ export function Hero({
                 </li>
               ))}
             </motion.ul>
-          </motion.div>
-<div className="flex gap-10 pt-8">
+   <div className="flex gap-10 pt-8">
     <Stat value={120} suffix="+" label="Projects" />
     <Stat value={99} suffix="%" label="Satisfaction" />
     <Stat value={24} suffix="h" label="Support" />
 </div>
+
+</motion.div>
           {/* RIGHT: Bento Studio Grid */}
           <motion.div
             initial={{ opacity: 0, x: 32 }}
@@ -199,7 +200,7 @@ function HeadlineWithGradient({ text }: { text: string }) {
   // Highlight a middle keyword with the gradient. Pick "Digital", "Experiences",
   // "Grow", "Business", or fall back to the middle word.
   const words = text.split(" ");
-  const keywords = ["Experiences", "Digital", "Grow", "Growth", "Businesses.", "Business."];
+  const keywords = ["Experiences", "Digital", "Grow", "Growth", "Businesses", "Business"];
   let idx = words.findIndex((w) => {
   const clean = w.replace(/[.,!?]/g, "");
   return keywords.includes(clean);
