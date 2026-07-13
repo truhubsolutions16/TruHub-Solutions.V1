@@ -47,7 +47,7 @@ export function Hero({
           >
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 rounded-full border border-[#1EA7FF]/25 bg-[#1EA7FF]/10 px-3 py-1 text-[10px] font-bold uppercase tracking-widest text-[#38BDF8]">
-              <Crown size={12} className="text-[#38BDF8]" />
+             <Crown size={12} className="text-[#38BDF8]" />
               Trusted by Businesses Across India
             </div>
 
@@ -66,7 +66,7 @@ export function Hero({
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.35, duration: 0.7 }}
-              className="max-w-xl font-sans text-base font-normal leading-relaxed text-white/60 sm:text-lg"
+              className="max-w-xl text-base leading-relaxed text-white/60 sm:text-lg"
             >
               {subtitle}
             </motion.p>
@@ -78,24 +78,20 @@ export function Hero({
               transition={{ delay: 0.5, duration: 0.7 }}
               className="flex flex-wrap items-center gap-3 pt-1"
             >
-              <a
-                href="#contact"
-                className="btn-primary btn-primary-hover group font-sans font-semibold"
-              >
+             <a href="#contact" className="btn-primary btn-primary-hover group">
                 {ctaPrimary}
                 <ArrowRight size={16} className="transition-transform group-hover:translate-x-1" />
               </a>
-              <a href="/portfolio" className="btn-ghost btn-ghost-hover font-sans font-semibold">
+               <a Primary → #contact  Secondary → /portfolio className="btn-ghost btn-ghost-hover">
                 {ctaSecondary}
               </a>
             </motion.div>
-
             {/* Trust badges */}
             <motion.ul
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.65, duration: 0.7 }}
-              className="flex flex-wrap gap-x-5 gap-y-2 pt-2 font-sans text-[12px] font-normal text-white/60"
+              className="flex flex-wrap gap-x-5 gap-y-2 pt-2 text-[12px] font-medium text-white/60"
             >
               {["Free Consultation", "Fast Delivery", "Lifetime Support Available", "Transparent Pricing"].map((t) => (
                 <li key={t} className="inline-flex items-center gap-1.5">
@@ -104,15 +100,12 @@ export function Hero({
                 </li>
               ))}
             </motion.ul>
-
-            {/* Stats */}
-            <div className="flex gap-10 pt-8">
-              <Stat value={120} suffix="+" label="Projects" />
-              <Stat value={99} suffix="%" label="Satisfaction" />
-              <Stat value={24} suffix="h" label="Support" />
-            </div>
           </motion.div>
-
+<div className="flex gap-10 pt-8">
+    <Stat value={120} suffix="+" label="Projects" />
+    <Stat value={99} suffix="%" label="Satisfaction" />
+    <Stat value={24} suffix="h" label="Support" />
+</div>
           {/* RIGHT: Bento Studio Grid */}
           <motion.div
             initial={{ opacity: 0, x: 32 }}
@@ -139,22 +132,27 @@ export function Hero({
                     backgroundSize: "28px 28px",
                   }}
                 />
-                <div className="absolute inset-0 grid place-items-center">
-                  <div className="font-display text-3xl font-bold text-white sm:text-5xl">
-                    www.truhubsolutions<span className="text-[#38BDF8]">.in</span>
-                  </div>
-                </div>
+              <div className="absolute inset-0 grid place-items-center">
+  <div className="font-display text-3xl font-bold text-white sm:text-5xl">
+    www.truhubsolutions<span className="text-[#38BDF8]">.in</span>
+  </div>
+</div>
 
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#030712] via-[#030712]/70 to-transparent p-6">
-                  <div className="text-xs uppercase tracking-widest text-[#38BDF8]"></div>
-                  <div className="mt-1 font-display text-lg font-bold text-white">
-                    Websites that Grow Businesses
-                  </div>
-                </div>
+
+
+<div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#030712] via-[#030712]/70 to-transparent p-6">
+  <div className="text-xs uppercase tracking-widest text-[#38BDF8]">
+    
+  </div>
+
+  <div className="mt-1 text-lg font-semibold text-white">
+    Websites that Grow Businesses
+  </div>
+</div>
               </div>
             </BentoCard>
 
-            {/* Card 2: Terminal / Currently Building */}
+            {/* Card 3: Terminal / Currently Building */}
             <BentoCard className="col-span-3 row-span-3 overflow-hidden p-5" delay={0.45}>
               <div className="mb-3 flex items-center gap-1.5">
                 <span className="h-2 w-2 rounded-full bg-red-500/60" />
@@ -163,27 +161,30 @@ export function Hero({
               </div>
               <div className="space-y-1 font-mono text-[10.5px] leading-relaxed text-white/55">
                 <p className="text-[#38BDF8]">$ TruHub Solutions</p>
-                <p>&gt; Building responsive websites...</p>
-                <p>&gt; Improving Google rankings...</p>
-                <p>&gt; Growing your business online...</p>
-                <TerminalCursor />
+<p>&gt; Building responsive websites...</p>
+<p>&gt; Improving Google rankings...</p>
+<p>&gt; Growing your business online...</p>
+<TerminalCursor />
               </div>
             </BentoCard>
 
-            {/* Card 3: Services / Stack */}
+            {/* Card 4: Tech Stack */}
             <BentoCard className="col-span-3 row-span-3 flex flex-col justify-center gap-3 p-5" delay={0.55}>
               <div className="text-[10px] font-bold uppercase tracking-widest text-white/40">
-                Our Services
+                Stack
               </div>
+             <div className="text-[10px] font-bold uppercase tracking-widest text-white/40">
+  Our Services
+</div>
 
-              <div className="flex flex-wrap items-center gap-2.5">
-                <StackChip label="Web Development" />
-                <StackChip label="SEO" highlight />
-                <StackChip label="Branding" />
-                <StackChip label="UI/UX" />
-                <StackChip label="Digital Marketing" />
-                <StackChip label="Hosting" />
-              </div>
+<div className="flex flex-wrap items-center gap-2.5">
+  <StackChip label="Web Development" />
+  <StackChip label="SEO" highlight />
+  <StackChip label="Branding" />
+  <StackChip label="UI/UX" />
+  <StackChip label="Digital Marketing" />
+  <StackChip label="Hosting" />
+</div>
             </BentoCard>
           </motion.div>
         </div>
@@ -199,10 +200,7 @@ function HeadlineWithGradient({ text }: { text: string }) {
   // "Grow", "Business", or fall back to the middle word.
   const words = text.split(" ");
   const keywords = ["Experiences", "Digital", "Grow", "Growth", "Businesses.", "Business."];
-  let idx = words.findIndex((w) => {
-    const clean = w.replace(/[.,!?]/g, "");
-    return keywords.includes(clean);
-  });
+  let idx = words.findIndex((w) => const clean = w.replace(/[.,!?]/g, ""));
   if (idx === -1) idx = Math.floor(words.length / 2);
   return (
     <>
@@ -244,13 +242,11 @@ function Stat({ value, suffix = "", label }: { value: number; suffix?: string; l
   }, [inView, value]);
   return (
     <div ref={ref} className="space-y-1">
-      <div className="font-display text-2xl font-extrabold tracking-tighter text-white tabular-nums">
+      <div className="text-2xl font-bold tracking-tighter text-white tabular-nums">
         {n}
         {suffix}
       </div>
-      <div className="font-sans text-[10px] font-medium uppercase tracking-widest text-white/40">
-        {label}
-      </div>
+      <div className="text-[10px] font-bold uppercase tracking-widest text-white/40">{label}</div>
     </div>
   );
 }
