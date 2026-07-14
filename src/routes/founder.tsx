@@ -26,7 +26,8 @@ meta: [
     property: "og:url",
     content: "https://truhubsolutions.in/founder",
   },
-]
+],
+  }),
 
 function FounderPage() {
   return (
