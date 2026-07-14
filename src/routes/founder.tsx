@@ -3,24 +3,30 @@ import { Founder } from "@/components/site/founder";
 
 export const Route = createFileRoute("/founder")({
   head: () => ({
-    meta: [
-      {
-        title: "Founder | Jayanth Gone | TruHub Solutions",
-      },
-      {
-        name: "description",
-        content:
-          "Meet Jayanth Gone, Founder of TruHub Solutions. Learn about his vision, leadership, and journey in building innovative technology solutions.",
-      },
-      {
-        name: "keywords",
-        content:
-          "Jayanth Gone, Founder, TruHub Solutions, Technology Entrepreneur, Software Company Founder",
-      },
-    ],
-  }),
-  component: FounderPage,
-});
+  links: [
+  {
+    rel: "canonical",
+    href: "https://truhubsolutions.in/founder",
+  },
+],
+meta: [
+  {
+    property: "og:title",
+    content: "Founder | Jayanth Gone | TruHub Solutions",
+  },
+  {
+    property: "og:description",
+    content: "Meet the Founder of TruHub Solutions.",
+  },
+  {
+    property: "og:image",
+    content: "https://truhubsolutions.in/Founder-TruHub-Solutions.webp",
+  },
+  {
+    property: "og:url",
+    content: "https://truhubsolutions.in/founder",
+  },
+]
 
 function FounderPage() {
   return (
