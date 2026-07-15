@@ -145,7 +145,7 @@ function FeaturedBanner({ project, index }: { project: FeaturedProject; index: n
 
     <Flame 
       size={14}
-  className="flame-animation"
+  className="animate-[pulse_1.2s_ease-in-out_infinite]"
 />
 
     Flagship Product
