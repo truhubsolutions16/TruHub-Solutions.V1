@@ -102,10 +102,10 @@ function FeaturedBanner({ project, index }: { project: FeaturedProject; index: n
   : "border-white/10"
         } bg-[#0B1220] transition-all duration-500 hover:-translate-y-1 hover:border-[#38BDF8]/60`}
         style={{
-         boxShadow: project.prestigious
+      boxShadow: project.prestigious
   ? "0 30px 80px -30px rgba(251,191,36,0.45), 0 0 0 1px rgba(251,191,36,0.20) inset"
-  : project.innovation
-  ? "0 30px 80px -30px rgba(56,189,248,0.45), 0 0 0 1px rgba(56,189,248,0.20) inset"
+  : project.flagship
+  ? "0 30px 80px -30px rgba(249,115,22,0.45), 0 0 0 1px rgba(249,115,22,0.20) inset"
   : "0 20px 60px -30px rgba(0,0,0,0.8)",
         }}
       >
