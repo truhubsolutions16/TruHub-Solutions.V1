@@ -24,7 +24,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     subtitle: "ERP System & GST Calculator",
     description:
       "Enterprise-grade ERP with inventory, billing, and a built-in GST calculator — engineered to run the day-to-day of a real business.",
-    url: "https://srilalithaenterprises.vercel.app",
+    url: "https://srilalithaenterprise.truhubsolutions.in",
     tags: ["ERP", "GST Calculator", "Billing", "Inventory"],
     prestigious: true,
     accent: "from-[#38BDF8]/40 via-indigo-500/20 to-fuchsia-500/10",
@@ -37,7 +37,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     subtitle: "Restaurant Dine-in System",
     description:
       "A full digital dine-in experience — interactive menus, table ordering, and a modern storefront that brings the restaurant online.",
-    url: "https://khaleel-bhai-familyrestraunt.vercel.app",
+    url: "https://khaleelbhaifamilyrestraunt.truhubsolutions.in",
     tags: ["Dine-in Menu", "Ordering", "Storefront"],
     premium: true,
     accent: "from-amber-400/30 via-orange-500/20 to-rose-500/10",
