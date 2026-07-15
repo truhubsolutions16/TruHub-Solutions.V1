@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpRight, Crown, UtensilsCrossed, ClipboardCheck, ExternalLink, Star, Cpu, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Crown, UtensilsCrossed, ClipboardCheck, ExternalLink, Star, Cpu, flame, type LucideIcon } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
 
@@ -13,6 +13,7 @@ type FeaturedProject = {
   prestigious?: boolean;
   premium?: boolean;
   innovation?: boolean;
+  flagship?: boolean;
   accent: string;
   icon: LucideIcon;
   eyebrow: string;
@@ -59,7 +60,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     "Automation",
     "No-Code",
   ],
-  premium: false,
+  flagship: true,
   accent: "from-cyan-400/40 via-sky-500/20 to-blue-600/10",
   icon: Crown,
   eyebrow: "Flagship Product",
@@ -138,7 +139,20 @@ function FeaturedBanner({ project, index }: { project: FeaturedProject; index: n
     Innovation Project
   </div>
 )}
+{/* Flagship ribbon */}
+{project.flagship && (
+  <div className="absolute left-0 top-0 z-10 flex items-center gap-1.5 rounded-br-2xl bg-gradient-to-r from-orange-500 via-red-500 to-yellow-400 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-lg sm:px-4 sm:py-2 sm:text-[11px]">
 
+    <Flame 
+      size={14}
+  className="animate-[pulse_1.2s_ease-in-out_infinite]"
+/>
+    />
+
+    Flagship Product
+
+  </div>
+)}
         {/* Ambient gradient */}
         <div
           className={`pointer-events-none absolute inset-0 bg-gradient-to-br ${project.accent} opacity-60 transition-opacity duration-500 group-hover:opacity-90`}
