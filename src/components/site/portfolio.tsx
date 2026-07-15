@@ -147,7 +147,6 @@ function FeaturedBanner({ project, index }: { project: FeaturedProject; index: n
       size={14}
   className="animate-[pulse_1.2s_ease-in-out_infinite]"
 />
-    />
 
     Flagship Product
 
