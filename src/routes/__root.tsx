@@ -117,6 +117,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   },
 ],
   scripts: [
+     {
+    async: true,
+    src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9852754392167601",
+    crossOrigin: "anonymous",
+  },
   // Organization Schema
   {
     type: "application/ld+json",
