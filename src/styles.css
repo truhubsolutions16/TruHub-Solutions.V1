@@ -298,7 +298,22 @@
 @utility anim-chat-ring { animation: chat-ring 2.4s ease-out infinite; }
 @utility anim-chat-badge { animation: chat-badge 1.6s ease-in-out infinite; }
 @utility anim-chat-tooltip { animation: chat-tooltip 6s ease-in-out infinite; animation-delay: 2s; }
+@keyframes flame-flicker {
+  0%, 100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 2px orange);
+  }
 
+  50% {
+    transform: scale(1.25);
+    filter: drop-shadow(0 0 10px red);
+  }
+}
+
+.flame-animation {
+  animation: flame-flicker 0.8s infinite ease-in-out;
+  display: inline-block;
+}
 /* ---------- Accessibility ---------- */
 /* Visible keyboard focus for all interactive elements. */
 a:focus-visible,
