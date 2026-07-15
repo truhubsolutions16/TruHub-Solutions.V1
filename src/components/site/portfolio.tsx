@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpRight, Crown, UtensilsCrossed, ClipboardCheck, ExternalLink, Star, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Crown, UtensilsCrossed, ClipboardCheck, ExternalLink, Star, Cpu, type LucideIcon } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
 
@@ -62,6 +62,25 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
   accent: "from-cyan-400/40 via-sky-500/20 to-blue-600/10",
   icon: Crown,
   eyebrow: "Flagship Product",
+},
+  {
+  id: "truhub-lab",
+  title: "TruHub Lababoratory Simulation Studio",
+  subtitle: "Engineering Simulation & Modeling Platform",
+  description:
+    "A web-based engineering simulation environment inspired by modern modeling tools. Build, simulate, and analyze electrical, electronics, and mathematical systems using an interactive block-based workspace.",
+  url: "https://truhublabb.truhubsolutions.in",
+  tags: [
+    "Simulation",
+    "Block Modeling",
+    "Electrical Engineering",
+    "Signal Analysis",
+    "Engineering Tools",
+  ],
+  prestigious: true,
+  accent: "from-cyan-400/40 via-blue-500/20 to-violet-600/10",
+  icon: Cpu,
+  eyebrow: "TruHub Labs Product",
 },
 ];
 
