@@ -37,7 +37,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     subtitle: "Restaurant Dine-in System",
     description:
       "A full digital dine-in experience — interactive menus, table ordering, and a modern storefront that brings the restaurant online.",
-    url: "https://khaleelbhaifamilyrestraunt.truhubsolutions.in",
+    url: "https://khaleelbhairestraunt.truhubsolutions.in",
     tags: ["Dine-in Menu", "Ordering", "Storefront"],
     premium: true,
     accent: "from-amber-400/30 via-orange-500/20 to-rose-500/10",
