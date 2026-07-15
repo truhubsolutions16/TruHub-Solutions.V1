@@ -61,7 +61,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     "No-Code",
   ],
   flagship: true,
-  accent: "from-cyan-400/40 via-sky-500/20 to-blue-600/10",
+  accent: "from-orange-500/40 via-red-500/25 to-yellow-400/10",
   icon: Crown,
   eyebrow: "Flagship Product",
 },
