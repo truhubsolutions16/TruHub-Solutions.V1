@@ -47,8 +47,8 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     eyebrow: "Featured Case Study",
   },
   {
-  id: "truforms",
-  title: "TruForms",
+  id: "truHubforms",
+  title: "TruHubForms",
   subtitle: "Smart Online Form Builder",
   description:
     "A modern online form builder by TruHub Solutions that lets businesses, educational institutions, and organizations create beautiful forms, collect responses, and automate workflows with ease.",
