@@ -12,6 +12,7 @@ type FeaturedProject = {
   tags: string[];
   prestigious?: boolean;
   premium?: boolean;
+  innovation?: boolean;
   accent: string;
   icon: LucideIcon;
   eyebrow: string;
@@ -58,7 +59,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     "Automation",
     "No-Code",
   ],
-  premium: true,
+  premium: false,
   accent: "from-cyan-400/40 via-sky-500/20 to-blue-600/10",
   icon: Crown,
   eyebrow: "Flagship Product",
@@ -69,7 +70,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
   subtitle: "Engineering Simulation & Modeling Platform",
   description:
     "A web-based engineering simulation environment inspired by modern modeling tools. Build, simulate, and analyze electrical, electronics, and mathematical systems using an interactive block-based workspace.",
-  url: "https://truhublabb.truhubsolutions.in",
+  url: "https://truhublab.truhubsolutions.in",
   tags: [
     "Simulation",
     "Block Modeling",
@@ -77,7 +78,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     "Signal Analysis",
     "Engineering Tools",
   ],
-  premium: true,
+  innovation: true,
  accent: "from-[#38BDF8]/40 via-indigo-500/20 to-fuchsia-500/10",
   icon: Cpu,
   eyebrow: "TruHub Labs Product",
@@ -93,12 +94,18 @@ function FeaturedBanner({ project, index }: { project: FeaturedProject; index: n
         target="_blank"
         rel="noopener noreferrer"
         className={`group relative block overflow-hidden rounded-3xl border ${
-          project.prestigious ? "border-amber-300/40" : "border-white/10"
+         project.prestigious
+  ? "border-amber-300/40"
+  : project.innovation
+  ? "border-cyan-400/40"
+  : "border-white/10"
         } bg-[#0B1220] transition-all duration-500 hover:-translate-y-1 hover:border-[#38BDF8]/60`}
         style={{
-          boxShadow: project.prestigious
-            ? "0 30px 80px -30px rgba(251,191,36,0.45), 0 0 0 1px rgba(251,191,36,0.20) inset"
-            : "0 20px 60px -30px rgba(0,0,0,0.8)",
+         boxShadow: project.prestigious
+  ? "0 30px 80px -30px rgba(251,191,36,0.45), 0 0 0 1px rgba(251,191,36,0.20) inset"
+  : project.innovation
+  ? "0 30px 80px -30px rgba(56,189,248,0.45), 0 0 0 1px rgba(56,189,248,0.20) inset"
+  : "0 20px 60px -30px rgba(0,0,0,0.8)",
         }}
       >
         {/* Shine sweep */}
@@ -124,6 +131,13 @@ function FeaturedBanner({ project, index }: { project: FeaturedProject; index: n
             Contains Premium Features
           </div>
         )}
+        {/* Innovation ribbon */}
+{project.innovation && (
+  <div className="absolute left-0 top-0 z-10 flex items-center gap-1.5 rounded-br-2xl bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-600 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-lg sm:px-4 sm:py-2 sm:text-[11px]">
+    <Cpu size={13} />
+    Innovation Project
+  </div>
+)}
 
         {/* Ambient gradient */}
         <div
