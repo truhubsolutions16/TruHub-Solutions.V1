@@ -97,21 +97,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:description", content: SITE_DESC },
       { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [
-      { rel: "stylesheet", href: appCss },
-      { rel: "preload", as: "image", href: "/truhub-logo.webp", fetchpriority: "high" },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
-      { rel: "preconnect", href: "https://fonts.googleapis.com" },
-      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      {
-  rel: "canonical",
-  href: "https://truhubsolutions.in",
-},
-      {
-        rel: "stylesheet",
-         href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
-      },
-    ],
+   links: [
+  { rel: "stylesheet", href: appCss },
+  { rel: "preload", as: "image", href: "/truhub-logo.webp", fetchpriority: "high" },
+
+  { rel: "icon", href: "/favicon.ico", sizes: "any" },
+
+  { rel: "preconnect", href: "https://fonts.googleapis.com" },
+  { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+
+  {
+    rel: "canonical",
+    href: "https://truhubsolutions.in",
+  },
+
+  {
+    rel: "stylesheet",
+    href: "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap",
+  },
+],
   scripts: [
   // Organization Schema
   {
