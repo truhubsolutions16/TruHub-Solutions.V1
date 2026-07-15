@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpRight, Crown, UtensilsCrossed, ExternalLink, Star, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Crown, UtensilsCrossed, ClipboardCheck, ExternalLink, Star, type LucideIcon } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
 
@@ -44,6 +44,25 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     icon: UtensilsCrossed,
     eyebrow: "Featured Case Study",
   },
+  {
+  id: "truforms",
+  title: "TruForms",
+  subtitle: "Smart Online Form Builder",
+  description:
+    "A modern online form builder by TruHub Solutions that lets businesses, educational institutions, and organizations create beautiful forms, collect responses, and automate workflows with ease.",
+  url: "https://truforms.truhubsolutions.in", // Change to your actual URL
+  tags: [
+    "Form Builder",
+    "Surveys",
+    "Analytics",
+    "Automation",
+    "No-Code",
+  ],
+  prestigious: true,
+  accent: "from-cyan-400/40 via-sky-500/20 to-blue-600/10",
+  icon: Crown,
+  eyebrow: "Flagship Product",
+},
 ];
 
 function FeaturedBanner({ project, index }: { project: FeaturedProject; index: number }) {
