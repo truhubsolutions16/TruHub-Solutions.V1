@@ -42,7 +42,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     url: "https://khaleelbhairestraunt.truhubsolutions.in",
     tags: ["Dine-in Menu", "Ordering", "Storefront"],
     premium: true,
-    accent: "from-amber-400/30 via-orange-500/20 to-rose-500/10",
+    accent: "from-violet-500/40 via-blue-500/30 to-cyan-400/10",
     icon: UtensilsCrossed,
     eyebrow: "Featured Case Study",
   },
