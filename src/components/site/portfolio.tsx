@@ -50,7 +50,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
   subtitle: "Smart Online Form Builder",
   description:
     "A modern online form builder by TruHub Solutions that lets businesses, educational institutions, and organizations create beautiful forms, collect responses, and automate workflows with ease.",
-  url: "https://truforms.truhubsolutions.in", // Change to your actual URL
+  url: "https://truhubforms.truhubsolutions.in", // Change to your actual URL
   tags: [
     "Form Builder",
     "Surveys",
