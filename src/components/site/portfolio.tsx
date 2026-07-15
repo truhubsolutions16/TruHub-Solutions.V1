@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpRight, Crown, UtensilsCrossed, ClipboardCheck, ExternalLink, Star, Cpu, flame, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Crown, UtensilsCrossed, ClipboardCheck, ExternalLink, Star, Cpu, Flame, type LucideIcon } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
 
