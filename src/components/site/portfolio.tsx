@@ -29,7 +29,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     url: "https://srilalithaenterprise.truhubsolutions.in",
     tags: ["ERP", "GST Calculator", "Billing", "Inventory"],
     prestigious: true,
-    accent: "from-[#38BDF8]/40 via-indigo-500/20 to-fuchsia-500/10",
+    accent: "from-lime-400/30 via-cyan-500/40 to-blue-700/20",
     icon: Crown,
     eyebrow: "Prestigious Case Study",
   },
