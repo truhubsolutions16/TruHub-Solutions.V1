@@ -80,7 +80,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
     "Engineering Tools",
   ],
   innovation: true,
- accent: "from-[#38BDF8]/40 via-indigo-500/20 to-fuchsia-500/10",
+ accent: "from-red-500/40 via-orange-500/25 to-rose-500/10",
   icon: Cpu,
   eyebrow: "TruHub Labs Product",
 },
