@@ -141,11 +141,11 @@ function FeaturedBanner({ project, index }: { project: FeaturedProject; index: n
 )}
 {/* Flagship ribbon */}
 {project.flagship && (
-  <div className="absolute left-0 top-0 z-10 flex items-center gap-1.5 rounded-br-2xl bg-gradient-to-r from-orange-500 via-red-500 to-yellow-400 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-lg sm:px-4 sm:py-2 sm:text-[11px]">
+ <div className="absolute left-0 top-0 z-10 flex items-center gap-1.5 rounded-br-2xl bg-gradient-to-r from-orange-500 via-red-500 to-yellow-400 px-3 py-1.5 text-[10px] font-semibold uppercase tracking-widest text-white shadow-lg sm:px-4 sm:py-2 sm:text-[11px] anim-glow-pulse">
 
     <Flame 
       size={14}
-  className="animate-[pulse_1.2s_ease-in-out_infinite]"
+  className="anim-flame"
 />
 
     Flagship Product
