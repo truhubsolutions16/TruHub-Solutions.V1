@@ -196,7 +196,7 @@ export function Portfolio({
   return (
     <section id="portfolio" className="section relative">
       <div className="container-x">
-        <SectionHeader meta={meta} eyebrow="Portfolio" heading="Selected work" />
+        <SectionHeader meta={meta} eyebrow="Portfolio" heading="Products & Engineering Innovations" />
 
         {/* Featured banners */}
         <div className="mb-12 grid gap-6">
