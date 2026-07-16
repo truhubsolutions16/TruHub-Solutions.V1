@@ -71,7 +71,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
   subtitle: "Engineering Simulation & Modeling Platform",
   description:
     "A web-based engineering simulation environment inspired by modern modeling tools. Build, simulate, and analyze electrical, electronics, and mathematical systems using an interactive block-based workspace.",
-  url: "https://truhublab.truhubsolutions.in",
+  url: "https://labs.truhubsolutions.in",
   tags: [
     "Simulation",
     "Block Modeling",
