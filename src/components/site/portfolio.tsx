@@ -90,7 +90,7 @@ accent: "from-pink-500/40 via-fuchsia-500/30 to-purple-600/10",
   subtitle: "Premium Restaurant Management System",
   description:
     "A complete restaurant management platform featuring QR menus, table reservations, online ordering, GST billing, kitchen order tickets (KOT), inventory management, customer loyalty, and a premium dining experience.",
-  url: "https://nawabbucketbriyani.vercel.app",
+  url: "https://nawabbucketbriyani.truhubsolutions.in",
   tags: [
     "QR Menu",
     "Table Booking",
@@ -132,7 +132,7 @@ accent: "from-pink-500/40 via-fuchsia-500/30 to-purple-600/10",
   subtitle: "Gym Management & Member Portal",
   description:
     "A modern fitness management system featuring member registration, attendance tracking, BMI calculator, subscription plans, trainer management, payment reminders, workout plans, and business analytics.",
-  url: "https://lifelongfitnessgym.vercel.app",
+  url: "https://lifelongfitnessgym.truhubsolutions.in",
   tags: [
     "Members",
     "BMI",
