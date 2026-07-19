@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpRight, Crown, UtensilsCrossed, ClipboardCheck, ExternalLink, Star, Cpu, Flame, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Crown, UtensilsCrossed, ClipboardCheck, Dumbbell, ExternalLink, Star, Cpu, Flame, type LucideIcon } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
 
@@ -83,6 +83,69 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
 accent: "from-pink-500/40 via-fuchsia-500/30 to-purple-600/10",
   icon: Cpu,
   eyebrow: "TruHub Labs Product",
+},
+  {
+  id: "nawab-bucket-briyani",
+  title: "Nawab Bucket Briyani",
+  subtitle: "Premium Restaurant Management System",
+  description:
+    "A complete restaurant management platform featuring QR menus, table reservations, online ordering, GST billing, kitchen order tickets (KOT), inventory management, customer loyalty, and a premium dining experience.",
+  url: "https://nawabbucketbriyani.vercel.app",
+  tags: [
+    "QR Menu",
+    "Table Booking",
+    "Kitchen Display",
+    "Billing",
+    "Inventory",
+    "GST",
+    "Analytics",
+  ],
+  premium: true,
+  accent: "from-amber-500/40 via-orange-600/35 to-red-700/20",
+  icon: UtensilsCrossed,
+  eyebrow: "Premium Restaurant Project",
+},
+  {
+  id: "thripuramba-cold-storage",
+  title: "Thripuramba Cold Storage",
+  subtitle: "Cold Storage ERP & Farmer Management",
+  description:
+    "An enterprise-grade cold storage ERP built for agricultural warehouses with farmer management, room allocation, inventory tracking, automated rent calculation, stock movement, billing, and advanced search capabilities.",
+  url: "https://thripurambacoldstorage.truhubsolutions.in",
+  tags: [
+    "Farmer ERP",
+    "Storage Rooms",
+    "Rent Calculator",
+    "Inventory",
+    "Reports",
+    "GST",
+    "Analytics",
+  ],
+  prestigious: true,
+  accent: "from-sky-400/35 via-cyan-500/35 to-blue-800/20",
+  icon: ClipboardCheck,
+  eyebrow: "Enterprise ERP",
+},
+  {
+  id: "lifelong-fitness",
+  title: "Lifelong Fitness Gym",
+  subtitle: "Gym Management & Member Portal",
+  description:
+    "A modern fitness management system featuring member registration, attendance tracking, BMI calculator, subscription plans, trainer management, payment reminders, workout plans, and business analytics.",
+  url: "https://lifelongfitnessgym.vercel.app",
+  tags: [
+    "Members",
+    "BMI",
+    "Attendance",
+    "Subscriptions",
+    "Payments",
+    "Workout Plans",
+    "Analytics",
+  ],
+  innovation: true,
+  accent: "from-lime-500/35 via-green-500/30 to-emerald-700/20",
+  icon: Dumbbell,
+  eyebrow: "Fitness Management System",
 },
 ];
 
