@@ -1,5 +1,5 @@
 "use client";
-import { ArrowUpRight, Crown, UtensilsCrossed, ClipboardCheck, Dumbbell, ExternalLink, Star, Cpu, Flame, type LucideIcon } from "lucide-react";
+import { ArrowUpRight, Crown, UtensilsCrossed, ClipboardCheck, Dumbbell, ExternalLink, Landmark, Star, Cpu, Flame, type LucideIcon } from "lucide-react";
 import { Reveal } from "./reveal";
 import { SectionHeader, type SectionMeta } from "./section-header";
 
@@ -20,6 +20,27 @@ type FeaturedProject = {
 };
 
 const FEATURED_PROJECTS: FeaturedProject[] = [
+  {
+  id: "seva-hub",
+  title: "Seva Hub",
+  subtitle: "Digital Citizen Services Platform",
+  description:
+    "A modern digital governance platform that enables citizens to access government services, apply for certificates, track applications, make online payments, and manage public services through a secure, user-friendly portal.",
+  url: "https://sevahub.truhubsolutions.in", // Change to your actual URL
+  tags: [
+    "Citizen Services",
+    "Certificates",
+    "Applications",
+    "Payments",
+    "Government",
+    "Tracking",
+    "Digital India",
+  ],
+  flagship: true,
+  accent: "from-emerald-500/35 via-teal-500/30 to-blue-700/20",
+  icon: Landmark,
+  eyebrow: "Digital Governance Platform",
+},
   {
     id: "srilalitha",
     title: "Srilalitha Enterprises",
