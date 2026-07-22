@@ -26,7 +26,7 @@ const FEATURED_PROJECTS: FeaturedProject[] = [
   subtitle: "Digital Citizen Services Platform",
   description:
     "A modern digital governance platform that enables citizens to access government services, apply for certificates, track applications, make online payments, and manage public services through a secure, user-friendly portal.",
-  url: "https://sevahub.truhubsolutions.in", // Change to your actual URL
+  url: "https://seva.truhubsolutions.in", // Change to your actual URL
   tags: [
     "Citizen Services",
     "Certificates",
